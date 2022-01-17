@@ -1,5 +1,7 @@
 # Proejcts Mentos
 
+목표는 코딩습관, 협업능력, Softskill
+
 ## Tech Requirements
 
 - Create-React-App
