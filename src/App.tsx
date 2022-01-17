@@ -1,15 +1,17 @@
-import styled from 'styled-components';
-
-const TestComponents = styled.div`
-  color: ${props => props.theme.color.primary.primary_01};
-  font-size: ${props => props.theme.typography.size.xxl};
-`;
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home, CampApply, CampDetail, Community, NotFound } from "./pages";
 
 function App() {
   return (
-    <TestComponents>
-      App
-    </TestComponents>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/apply" element={<CampApply />} />
+        <Route path="/detail/:id" element={<CampDetail />} />
+        <Route path="/community/:id" element={<Community />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
