@@ -1,5 +1,6 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home, CampApply, CampDetail, Community, NotFound } from "./pages";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Home, CampApply, CampDetail, Community, NotFound } from './pages';
 
 function App() {
   return (
