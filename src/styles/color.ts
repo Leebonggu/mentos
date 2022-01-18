@@ -7,18 +7,18 @@ type White = '#ffffff';
 type Gray01 = '#212121';
 type Gray02 = '#616161';
 type Gray03 = '#888888';
-type Gray04 = '#cccccc';
-type Gray05 = '#eeeeee';
-type Gray06 = '#f5f5f5';
+type Gray04 = '#CCCCCC';
+type Gray05 = '#EEEEEE';
+type Gray06 = '#F5F5F5';
 
 // Primary
-type Primary01 = '#7471ff';
-type Primary02 = '#cecbef';
-type Primary03 = '#8148fb';
+type Primary01 = '#7471FF';
+type Primary02 = '#CECBEF';
+type Primary03 = 'linear-gradient(97.88deg, #854BFF -84.42%, #7179FF 15.02%, #6D83FF 36.89%, #698BFF 54.79%, #6499FF 80.65%, #659BF7 108.49%, #669FEA 148.27%, #69A9CD 197.99%, #6CB1B2 239.75%)';
 
 // Secondary
-type Secondary01 = '#24dbaf';
-type Secondary02 = '#cdf3ea';
+type Secondary01 = '#24DBAF';
+type Secondary02 = '#CDF3EA';
 
 interface Basic {
   black: Black;
