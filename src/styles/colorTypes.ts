@@ -20,12 +20,12 @@ type Primary03 = 'linear-gradient(97.88deg, #854BFF -84.42%, #7179FF 15.02%, #6D
 type Secondary01 = '#24DBAF';
 type Secondary02 = '#CDF3EA';
 
-interface Basic {
+export interface Basic {
   black: Black;
   white: White;
 }
 
-interface Gray {
+export interface Gray {
   gray_01: Gray01;
   gray_02: Gray02;
   gray_03: Gray03;
@@ -34,20 +34,29 @@ interface Gray {
   gray_06: Gray06;
 }
 
-interface Primary {
+export interface Primary {
   primary_01: Primary01;
   primary_02: Primary02;
   primary_03: Primary03;
 }
 
-interface Secondary {
+export interface Secondary {
   secondary_01: Secondary01;
   secondary_02: Secondary02;
 }
 
 export interface Color {
-  basic: Basic;
-  gray: Gray;
-  primary: Primary;
-  secondary: Secondary;
+  black: Black;
+  white: White;
+  gray_01: Gray01;
+  gray_02: Gray02;
+  gray_03: Gray03;
+  gray_04: Gray04;
+  gray_05: Gray05;
+  gray_06: Gray06;
+  primary_01: Primary01;
+  primary_02: Primary02;
+  primary_03: Primary03;
+  secondary_01: Secondary01;
+  secondary_02: Secondary02;
 }
