@@ -1,19 +1,17 @@
 import { Container, ContentsWrapper, Contents } from './styles';
-import { useSticky } from '@/hooks/useSticky';
-import Swiper from './Swiper';
+import { useSticky } from '@hooks/useSticky'
 
 function Header() {
   const isSticky = useSticky(20);
 
   return (
-    <Container>
-      <ContentsWrapper isSticky={isSticky}>
+    <Container isSticky={isSticky}>
+      <ContentsWrapper>
         <Contents>
           <div>MENTOS</div>
           <div>ICON</div>
         </Contents>
       </ContentsWrapper>
-      <Swiper />
     </Container>
   );
 }

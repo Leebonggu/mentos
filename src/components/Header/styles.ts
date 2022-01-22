@@ -1,23 +1,23 @@
 import styled, { css }from 'styled-components';
 
-export const Container = styled.header`
-  height: 540px;
-  background: ${props => props.theme.color.primary.primary_01};
-`;
-
-interface ContentsWrapperProps {
-  isSticky: boolean;
-}
-export const ContentsWrapper = styled.nav<ContentsWrapperProps>`
+export const Container = styled.header<ContentsWrapperProps>`
   height: 64px;
-  color: ${props => props.theme.color.basic.white};
+  background: ${props => props.theme.color.primary.primary_03};
   ${props => props.isSticky && css`
-    top: 0;  
+    color: ${props => props.theme.color.basic.white};
+    top: 0;
     position: sticky;
     background: ${props => props.theme.color.basic.white};
     color: ${props => props.theme.color.basic.black};
     transition: all ease-in 0.2s;
   `}
+`;
+
+interface ContentsWrapperProps {
+  isSticky: boolean;
+}
+export const ContentsWrapper = styled.nav`
+  height: 100%;
 `;
 
 export const Contents = styled.div`
@@ -34,6 +34,7 @@ export const Contents = styled.div`
 export const SwiperContainer = styled.div`
   height: calc(540px - 64px);
   background: ${props => props.theme.color.primary.primary_01};
+  background-color: red;
 `;
 
 export const SwiperContents = styled.div`

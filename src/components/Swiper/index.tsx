@@ -10,4 +10,4 @@ function Swiper() {
   )
 }
 
-export default Swiper
+export default Swiper;
