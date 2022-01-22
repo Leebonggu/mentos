@@ -1,23 +1,23 @@
 import { CommunityContainer, Contents } from './styles';
-import CommunityCardArticle from './CommunityCardArticle';
-import CommunityCardComments from './CommunityCardComments';
+import CommunityCardArticle from './CommunityQuestion';
+import CommunityCardComments from './CommunityComments';
 import MoreSee from './MoreSee';
+import { ICommunity } from '@/typings';
 
-interface CommunityType {
-  title: string;
-  article: string;
-  tags: string[];
-  nickname: string;
-  text: string;
-}
 
-function Card({ title, article, tags, nickname, text }: CommunityType) {
+function Card({
+  title,
+  tags,
+  text,
+  comments,
+  id,
+}: ICommunity) {
   return (
     <CommunityContainer>
       <Contents>
-        <CommunityCardArticle title={title} article={article} tags={tags}/>
-        <CommunityCardComments nickname={nickname} text={text} />
-        <MoreSee />
+        <CommunityCardArticle title={title} article={text} tags={tags}/>
+        <CommunityCardComments comments={comments} />
+        <MoreSee id={id} />
       </Contents>
     </CommunityContainer>
   );

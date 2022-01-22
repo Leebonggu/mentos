@@ -12,7 +12,6 @@ const Contents = styled.div`
   grid-template-columns: repeat(4, 1fr);
 `;
 
-
 const Title = styled.h2`
   margin-bottom: 15px;
   font-size: ${props => props.theme.typography.size.xl};
@@ -23,13 +22,12 @@ interface HomeCardSectionProps {
   children: ReactNode;
   title: string;
 }
+
 function HomeCardSection({ children, title }: HomeCardSectionProps) {
   return (
     <Container>
       <Title>{title}</Title>
-      <Contents>
-        {children}
-      </Contents>
+      <Contents>{children}</Contents>
     </Container>
   );
 }

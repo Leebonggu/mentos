@@ -6,7 +6,7 @@
       "@pages/*": ["src/pages/*"],
       "@components/*": ["src/components/*"],
       "@styles/*": ["src/styles/*"],
-      "@types/*": ["src/types/*"],
+      "@typings/*": ["src/typings/*"],
       "@apis/*": ["src/apis/*"],
       "@libs/*": ["src/libs/*"],
       "@hooks/*": ["src/hooks/*"],

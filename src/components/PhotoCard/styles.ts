@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 
 interface ContainerProps {
-  imgUrl?: string;
+  thumbnail?: string;
 }
-const Container = styled.div<ContainerProps>`
+export const Container = styled.div<ContainerProps>`
   width: 224px;
   height: 280px;
   border-radius: 10px;
-  background-image: ${props => `url(${props.imgUrl})`};
+  background-image: ${props => `url(${props.thumbnail})`};
   background-size: cover;
   position: relative;
 `;
 
-const PhotoCardBox = styled.div`
+export const PhotoCardBox = styled.div`
   position: absolute;
   left: 0%;
   right: 0%;
@@ -28,7 +28,7 @@ const PhotoCardBox = styled.div`
   justify-content: space-between;
   background: linear-gradient(180deg, rgba(39, 63, 40, 0) 0%, rgba(89, 89, 89, 0.558824) 15.62%, #000000 70.83%);
 
-  .field {
+  .category {
     font-weight: ${props => props.theme.typography.weight.bold};
     font-size: ${props => props.theme.typography.size.xs};
     color: ${props => props.theme.color.white};
@@ -44,25 +44,3 @@ const PhotoCardBox = styled.div`
     color: ${props => props.theme.color.white};
   }
 `;
-
-interface PhotoCardContentProps {
-  imgUrl?: string;
-  status?: string;
-  field?: string;
-  dueDate?: string;
-  title?: string;
-}
-
-function PhotoCardContent({ imgUrl, status, field, dueDate, title }: PhotoCardContentProps) {
-  return (
-    <Container imgUrl= {imgUrl}>
-      <PhotoCardBox>
-        <span className='field'>{status || field}</span>
-        <span className='title'>{title}</span>
-        <span className='due-date'>{dueDate}부터</span>
-      </PhotoCardBox>
-    </Container>
-  );
-}
-
-export default PhotoCardContent;
