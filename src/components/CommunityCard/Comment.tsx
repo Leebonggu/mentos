@@ -39,7 +39,7 @@ interface CommentProps {
 function Comment({ nickname, text }: CommentProps) {
   return (
     <Container>
-      <Icon />
+      <Icon bgColor='gray_05'/>
       <Contents>
         <Nickname>{nickname}</Nickname>
         <Text>{text}</Text>

@@ -1,5 +1,6 @@
 import { Container, ContentsWrapper, Contents } from './styles';
 import { useSticky } from '@hooks/useSticky'
+import Logo from '@components/atom/Logo';
 
 function Header() {
   const isSticky = useSticky(20);
@@ -8,7 +9,7 @@ function Header() {
     <Container isSticky={isSticky}>
       <ContentsWrapper>
         <Contents>
-          <div>MENTOS</div>
+          <Logo isSticky={isSticky}/>
           <div>ICON</div>
         </Contents>
       </ContentsWrapper>

@@ -1,22 +1,32 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
+import { Color } from '@styles/colorTypes';
+import { conditionalColorGenerator } from '@libs/colorHelper'
 
-const Container = styled.div`
+ const Container = styled.div<IconProps>`
   width: 30px;
   height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background-color: ${props => props.theme.color.gray_05};
+  background-color: ${props => conditionalColorGenerator(props.bgColor)};
+  margin-right: ${props => props.mr}px;
+  margin-left: ${props => props.ml}px;
+  margin-top: ${props => props.mt}px;
+  margin-bottom: ${props => props.mb}px;
 `;
-
 
 interface IconProps {
   children?: ReactNode;
+  bgColor: keyof Color;
+  mr?: number;
+  ml?: number;
+  mt?: number;
+  mb?: number;
 }
-function Icon({ children }: IconProps) {
-  return <Container>{children}</Container>
+function Icon({ children, bgColor, ...props }: IconProps) {
+  return <Container bgColor={bgColor} {...props}>{children}</Container>
 }
 
 export default Icon;
