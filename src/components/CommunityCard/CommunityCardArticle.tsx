@@ -27,7 +27,7 @@ interface CommunityCardArticleProps {
 function CommunityCardArticle({ title, article, tags }: CommunityCardArticleProps) {
   return (
     <Container>
-      <Tags tags={tags}/>
+      <Tags tags={tags} />
       <Title>{title}</Title>
       <Article>{article}</Article>
     </Container>

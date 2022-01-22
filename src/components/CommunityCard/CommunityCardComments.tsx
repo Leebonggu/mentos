@@ -8,14 +8,15 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-function CommunityCardComments() {
+interface CommunityCardCommentsProps {
+  nickname: string;
+  text: string;
+}
+function CommunityCardComments({ nickname, text }: CommunityCardCommentsProps) {
   return (
-    <>
-      <Container>
-        <Comment nickname='man' text='coding' />
-        <Comment nickname='man' text='coding' />
-      </Container>
-    </>
+    <Container>
+      <Comment nickname={nickname} text={text} />
+    </Container>
   );
 }
 

@@ -45,7 +45,7 @@ const PhotoCardBox = styled.div`
   }
 `;
 
-interface PhotoCardProps {
+interface PhotoCardContentProps {
   imgUrl?: string;
   status?: string;
   field?: string;
@@ -53,7 +53,7 @@ interface PhotoCardProps {
   title?: string;
 }
 
-function PhotoCard({ imgUrl, status, field, dueDate, title }: PhotoCardProps) {
+function PhotoCardContent({ imgUrl, status, field, dueDate, title }: PhotoCardContentProps) {
   return (
     <Container imgUrl= {imgUrl}>
       <PhotoCardBox>
@@ -65,4 +65,4 @@ function PhotoCard({ imgUrl, status, field, dueDate, title }: PhotoCardProps) {
   );
 }
 
-export default PhotoCard;
+export default PhotoCardContent;

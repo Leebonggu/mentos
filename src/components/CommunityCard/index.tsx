@@ -1,18 +1,28 @@
-import { CommunityContainer, Contents } from './styles';
-import CommunityCardArticle from './CommunityCardArticle';
-import CommunityCardComments from './CommunityCardComments';
-import MoreSee from './MoreSee';
+import Card from './Card';
 
-function CommunityCard() {
-  return (
-    <CommunityContainer>
-      <Contents>
-        <CommunityCardArticle title='hello' article='world' tags={["1", "2"]}/>
-        <CommunityCardComments />
-        <MoreSee />
-      </Contents>
-    </CommunityContainer>
-  );
+
+interface CommunityType {
+  title: string;
+  article: string;
+  tags: string[];
+  nickname: string;
+  text: string;
+}
+interface CommunityCardProps {
+  data: CommunityType[];
+}
+
+function CommunityCard({ data }: CommunityCardProps) {
+  return <>{data.map((e, i) => 
+    <Card
+      key={i}
+      title={e.title}
+      article={e.article}
+      tags={e.tags}
+      nickname={e.nickname}
+      text={e.text}
+    />
+  )}</>
 }
 
 export default CommunityCard;
