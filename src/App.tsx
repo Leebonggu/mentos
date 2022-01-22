@@ -1,15 +1,20 @@
-import styled from 'styled-components';
-
-const TestComponents = styled.div`
-  color: ${props => props.theme.color.primary.primary_01};
-  font-size: ${props => props.theme.typography.size.xxl};
-`;
+import { BrowserRouter } from 'react-router-dom';
+import RootRoutes from './Routes';
+import Header from '@components/Header';
+import Layout from '@components/Layout';
+import Footer from '@components/Footer';
 
 function App() {
+  const isDev = process.env.NODE_ENV === 'development';
+  
   return (
-    <TestComponents>
-      App
-    </TestComponents>
+    <BrowserRouter basename={isDev ? '/' : process.env.PUBLIC_URL}>
+      <Header />
+      <Layout>
+        <RootRoutes />
+      </Layout>
+      <Footer />
+    </BrowserRouter>
   );
 }
 

@@ -1,6 +1,6 @@
 // import original module declarations
 import 'styled-components';
-import { Color } from './color';
+import { Color } from './colorTypes';
 import { Typography } from './typography';
 
 // and extend them!

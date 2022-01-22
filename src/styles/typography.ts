@@ -21,12 +21,12 @@ type HeightXS = '18px';
 type HeightXXS = '14px';
 
 
-interface Weight {
+export interface Weight {
   bold: Bold;
   medium: WeightMedium;
 }
 
-interface Size {
+export interface Size {
   xxl: XXLarge;
   xl: XLarge;
   lg: Large;
@@ -36,7 +36,7 @@ interface Size {
   xxs: XXSmall;
 }
 
-interface LineHeight {
+export interface LineHeight {
   xxl: HeightXXL;
   xl: HeightXL;
   lg: HeightL;
