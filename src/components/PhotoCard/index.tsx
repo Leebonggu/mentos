@@ -6,7 +6,6 @@ interface PhotoCardProps {
   data?: Camp[];
 }
 function PhotoCard({ data }: PhotoCardProps) {
-  console.log(data)
   return (
     <>
       {data?.map((e)=> (

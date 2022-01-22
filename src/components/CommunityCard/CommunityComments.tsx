@@ -13,7 +13,6 @@ interface CommunityCardCommentsProps {
   comments: IComment[];
 }
 function CommunityCardComments({ comments }: CommunityCardCommentsProps) {
-  console.log(comments)
   return (
     <Container>
       {comments.map((comment) => <Comment key={comment.id} author={comment.author} text={comment.text} />)}

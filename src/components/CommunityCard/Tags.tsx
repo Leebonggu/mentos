@@ -10,7 +10,6 @@ interface TagsProps {
   tags?: string[];
 }
 function Tags({ tags }: TagsProps) {
-  console.log(tags?.slice(1))
   return (
     <Container>
       <Tag bgColor='primary' fontColor='white'>{tags?.[0]}</Tag>
