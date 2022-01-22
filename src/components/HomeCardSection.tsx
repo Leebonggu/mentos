@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Container = styled.div``;
 
-function HomeCardSectionTemplate() {
+function HomeCardSection() {
   return (
     <Container>
       <div>title</div>
@@ -12,4 +12,4 @@ function HomeCardSectionTemplate() {
   );
 }
 
-export default HomeCardSectionTemplate;
+export default HomeCardSection;

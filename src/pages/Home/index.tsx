@@ -1,6 +1,8 @@
 import { Container } from './styles';
 import Swiper from '@components/Swiper'
 import PhotoCard from '@components/PhotoCard';
+import CommunityCard from '@components/CommunityCard';
+import Icon from '@components/atom/Icon';
 
 function Home() {
   return (
@@ -8,6 +10,7 @@ function Home() {
       <Swiper />
       <div>Home</div>
       <PhotoCard />
+      <CommunityCard />
     </Container>
   )
 }

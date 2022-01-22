@@ -19,8 +19,9 @@ const PhotoCardBox = styled.div`
   top: 54.64%;
   bottom: 0%;
   width: 100%;
-  height: calc(100%-54.64%);
+  /* absolute 이기때문에 패딩은 여기 */
   padding: 16px;
+  height: calc(100%-54.64%);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -30,17 +31,17 @@ const PhotoCardBox = styled.div`
   .field {
     font-weight: ${props => props.theme.typography.weight.bold};
     font-size: ${props => props.theme.typography.size.xs};
-    color: ${props => props.theme.color.basic.white};
+    color: ${props => props.theme.color.white};
   }
   .title {
     font-weight: ${props => props.theme.typography.weight.bold};
     font-size: ${props => props.theme.typography.size.md};
-    color: ${props => props.theme.color.basic.white};
+    color: ${props => props.theme.color.white};
   }
   .due-date {
     font-weight: ${props => props.theme.typography.weight.bold};
     font-size: ${props => props.theme.typography.size.xs};
-    color: ${props => props.theme.color.basic.white};
+    color: ${props => props.theme.color.white};
   }
 `;
 

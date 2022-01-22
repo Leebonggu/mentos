@@ -2,14 +2,15 @@ import styled, { css }from 'styled-components';
 
 export const Container = styled.header<ContentsWrapperProps>`
   height: 64px;
-  background: ${props => props.theme.color.primary.primary_03};
+  z-index: 10;
+  background: ${props => props.theme.color.primary_03};
   ${props => props.isSticky && css`
-    color: ${props => props.theme.color.basic.white};
+    color: ${props => props.theme.color.white};
     top: 0;
     position: sticky;
-    background: ${props => props.theme.color.basic.white};
-    color: ${props => props.theme.color.basic.black};
-    transition: all ease-in 0.2s;
+    background: ${props => props.theme.color.white};
+    color: ${props => props.theme.color.black};
+    transition: all ease-in 0.1s;
   `}
 `;
 
