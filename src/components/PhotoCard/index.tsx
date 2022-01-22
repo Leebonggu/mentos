@@ -1,28 +1,22 @@
-import PhotoCardContent from './PhotoCardContent';
+import { Camp } from '@/typings';
+import Card from './Card';
 
-interface PhotoCardContent{
-  imgUrl?: string;
-  status?: string;
-  field?: string;
-  dueDate?: string;
-  title?: string;
-}
 
 interface PhotoCardProps {
-  data?: PhotoCardContent[];
+  data?: Camp[];
 }
 function PhotoCard({ data }: PhotoCardProps) {
   console.log(data)
   return (
     <>
-      {data?.map((e, i)=> (
-        <PhotoCardContent
-          key={i}
-          imgUrl={e.imgUrl}
-          status={e.status}
-          field={e.field}
-          dueDate={e.dueDate}
-          title={e.title}
+      {data?.map((e)=> (
+        <Card
+          key={e.id}
+          thumbnail={e.thumbnail}
+          applyStatus={e.applyStatus}
+          skill={e.skill}
+          startDate={e.startDate}
+          campTitle={e.campTitle}
         />))}
     </>
   )

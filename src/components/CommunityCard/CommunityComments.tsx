@@ -1,3 +1,4 @@
+import { IComment } from '@/typings';
 import styled from 'styled-components';
 import Comment from './Comment';
 
@@ -9,13 +10,13 @@ const Container = styled.div`
 `;
 
 interface CommunityCardCommentsProps {
-  nickname: string;
-  text: string;
+  comments: IComment[];
 }
-function CommunityCardComments({ nickname, text }: CommunityCardCommentsProps) {
+function CommunityCardComments({ comments }: CommunityCardCommentsProps) {
+  console.log(comments)
   return (
     <Container>
-      <Comment nickname={nickname} text={text} />
+      {comments.map((comment) => <Comment key={comment.id} author={comment.author} text={comment.text} />)}
     </Container>
   );
 }

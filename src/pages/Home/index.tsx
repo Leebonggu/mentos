@@ -4,47 +4,57 @@ import PhotoCard from '@components/PhotoCard'
 import CommunityCard from '@components/CommunityCard';
 import HomeCardSection from '@components/HomeCardSection';
 import Banner from '@components/Banner';
+import { Camp } from '@/typings';
 
-interface campMock {
-  imgUrl?: string;
-  status?: string;
-  field?: string;
-  dueDate?: string;
-  title?: string;
-}
-
-const campMock: campMock[] = [
+const campMock: Camp[] = [
   {
-    imgUrl: 'string',
-    status: 'string',
-    field: 'string',
-    dueDate: 'string',
-    title: 'string',
+    id: 1,
+    type: 'popular',
+    thumbnail: 'https://entertainimg.kbsmedia.co.kr/cms/uploads/PERSON_20211130132957_f5410dba3c83c9ca9d3a19b9bff9af18.jpg',
+    applyStatus: '모집전',
+    skill: 'string',
+    startDate: 'string',
+    campTitle: 'string',
   },
   {
-    imgUrl: 'string',
-    status: 'string',
-    field: 'string',
-    dueDate: 'string',
-    title: 'string',
-  }
+    id: 2,
+    thumbnail: 'https://entertainimg.kbsmedia.co.kr/cms/uploads/PERSON_20211130132957_f5410dba3c83c9ca9d3a19b9bff9af18.jpg',
+    applyStatus: '모집완료',
+    skill: 'string',
+    startDate: 'string',
+    campTitle: 'string',
+  },
+  {
+    id: 3,
+    thumbnail: 'https://entertainimg.kbsmedia.co.kr/cms/uploads/PERSON_20211130132957_f5410dba3c83c9ca9d3a19b9bff9af18.jpg',
+    applyStatus: '모집완료',
+    skill: 'string',
+    startDate: 'string',
+    campTitle: 'string',
+  },
+  {
+    id: 4,
+    thumbnail: 'https://entertainimg.kbsmedia.co.kr/cms/uploads/PERSON_20211130132957_f5410dba3c83c9ca9d3a19b9bff9af18.jpg',
+    applyStatus: '모집중',
+    skill: 'string',
+    startDate: 'string',
+    campTitle: 'string',
+  },
 ];
 
 const communityMock = [
-  {
+  { 
+    id: 1,
     title: 'title',
-    article:'world',
-    tags: ["1", "2"],
-    nickname: 'nick',
-    text: 'wow',
+    text:'world',
+    author: 'nick',
+    tags: ["1", "2", "3"],
+    comments: [{
+      id: 1,
+      author: 'man',
+      text: 'commeno',
+    }]
   },
-  {
-    title: 'title',
-    article:'world',
-    tags: ["1", "2"],
-    nickname: 'nick',
-    text: 'wow',
-  }
 ]
 
 function Home() {

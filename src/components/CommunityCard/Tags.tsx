@@ -7,13 +7,14 @@ export const Container = styled.div`
 `;
 
 interface TagsProps {
-  tags: string[];
+  tags?: string[];
 }
 function Tags({ tags }: TagsProps) {
+  console.log(tags?.slice(1))
   return (
     <Container>
-      <Tag bgColor='primary' fontColor='white'>{tags[0]}</Tag>
-      <Tag bgColor='default' fontColor='black'>{tags[1]}</Tag>
+      <Tag bgColor='primary' fontColor='white'>{tags?.[0]}</Tag>
+      {tags?.slice(1).map((tag => <Tag key={tag} bgColor='default' fontColor='black'>{tag}</Tag>))}
     </Container>
   );
 }
