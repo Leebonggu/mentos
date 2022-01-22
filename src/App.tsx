@@ -1,5 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
-import RootRouter from '@/Routes'
+import RootRoutes from './Routes';
 import Header from '@components/Header';
 import Layout from '@components/Layout';
 
@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter basename={isDev ? '/' : process.env.PUBLIC_URL}>
       <Header />
       <Layout>
-        <RootRouter />
+        <RootRoutes />
       </Layout>
     </BrowserRouter>
   );

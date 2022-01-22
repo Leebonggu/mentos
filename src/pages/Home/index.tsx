@@ -1,5 +1,5 @@
 import { Container } from './styles';
-import Swiper from '@/components/Swiper';
+import Swiper from '@components/Swiper'
 
 function Home() {
   return (
