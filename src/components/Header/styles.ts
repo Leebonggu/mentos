@@ -28,16 +28,3 @@ export const Contents = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
-
-
-// Swiper
-export const SwiperContainer = styled.div`
-  height: calc(540px - 64px);
-  background: ${props => props.theme.color.primary.primary_01};
-  background-color: red;
-`;
-
-export const SwiperContents = styled.div`
-  max-width: 960px;
-  margin: 0 auto;
-`;
