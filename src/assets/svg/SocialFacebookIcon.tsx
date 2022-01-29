@@ -1,7 +1,7 @@
 import Icon from '@/components/atom/Icon';
 import { IconProps  } from '@/typings';
 
-export const SocialGithubIcon = (props: IconProps) => {
+export const SocialFacebookIcon = (props: IconProps) => {
   return (
     <Icon {...props} bgColor="white">
       <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -10,4 +10,3 @@ export const SocialGithubIcon = (props: IconProps) => {
     </Icon>
   );
 }
-

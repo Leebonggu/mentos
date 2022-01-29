@@ -39,7 +39,7 @@ type FacebookColor = '#3182CE';
 
 export interface IconProps {
   children?: SVGProps<SVGSVGElement>;
-  bgColor: keyof Color | TwitterColor | GoogleColor | InstagramColor | FacebookColor;
+  bgColor?: keyof Color | TwitterColor | GoogleColor | InstagramColor | FacebookColor;
   mr?: number;
   ml?: number;
   mt?: number;
