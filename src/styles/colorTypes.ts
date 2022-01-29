@@ -20,9 +20,6 @@ type Primary03 = 'linear-gradient(97.88deg, #854BFF -84.42%, #7179FF 15.02%, #6D
 type Secondary01 = '#24DBAF';
 type Secondary02 = '#CDF3EA';
 
-// Social
-type Social01 = '#63B3ED';
-
 export interface Basic {
   black: Black;
   white: White;
@@ -48,8 +45,6 @@ export interface Secondary {
   secondary_02: Secondary02;
 }
 
-
-
 export interface Color {
   black: Black;
   white: White;
@@ -64,5 +59,4 @@ export interface Color {
   primary_03: Primary03;
   secondary_01: Secondary01;
   secondary_02: Secondary02;
-  social_01: Social01;
 }

@@ -7,7 +7,9 @@ export const Container = styled.div<ContainerProps>`
   height: 280px;
   border-radius: 10px;
   background-image: ${props => `url(${props.thumbnail})`};
+  background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   position: relative;
 `;
 

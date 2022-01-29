@@ -1,18 +1,24 @@
+import { MOBILE_BREAKPOINT } from '@/constants';
 import { ReactNode } from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
+const Container = styled.div<{display?: string}>`
   display: flex;
   flex-direction: column;
   margin-bottom: 48px;
+  display: ${props => props.display && props.display};
+  @media screen and (max-width: ${MOBILE_BREAKPOINT}px) {
+    padding: 0 24px;
+  }
 `;
 
 const Contents = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  /* display: flex; */
   gap: 20px;
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: ${MOBILE_BREAKPOINT}px) {
     grid-template-columns: repeat(1, 1fr);
   }
 `;
@@ -26,11 +32,12 @@ const Title = styled.h2`
 interface HomeCardSectionProps {
   children: ReactNode;
   title: string;
+  display?: string; 
 }
 
-function HomeCardSection({ children, title }: HomeCardSectionProps) {
+function HomeCardSection({ children, title, display }: HomeCardSectionProps) {
   return (
-    <Container>
+    <Container display={display}>
       <Title>{title}</Title>
       <Contents>{children}</Contents>
     </Container>

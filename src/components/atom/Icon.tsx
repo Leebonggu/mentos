@@ -1,6 +1,5 @@
-import { SVGProps } from 'react';
 import styled from 'styled-components';
-import { Color } from '@styles/colorTypes';
+import { IconProps } from '@/typings';
 // import { conditionalColorGenerator } from '@libs/colorHelper'
 
  const Container = styled.div<IconProps>`
@@ -17,19 +16,6 @@ import { Color } from '@styles/colorTypes';
   margin-bottom: ${props => props.mb}px;
 `;
 
-type TwitterColor = '#63B3ED';
-type GoogleColor = '#E53E3E';
-type InstagramColor = '#2D3748';
-type FacebookColor = '#3182CE';
-
-interface IconProps {
-  children?: SVGProps<SVGSVGElement>;
-  bgColor: keyof Color | TwitterColor | GoogleColor | InstagramColor | FacebookColor;
-  mr?: number;
-  ml?: number;
-  mt?: number;
-  mb?: number;
-}
 function Icon({ children, bgColor, ...props }: IconProps) {
   return <Container bgColor={bgColor} {...props}>{children}</Container>
 }

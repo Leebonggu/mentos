@@ -1,25 +1,25 @@
+import { CommunityContainer, Contents } from './styles';
+import CommunityCardArticle from './CommunityQuestion';
+import CommunityCardComments from './CommunityComments';
+import MoreSee from './MoreSee';
 import { ICommunity } from '@/typings';
-import Card from './Card';
 
-interface CommunityCardProps {
-  data: ICommunity[];
-}
-
-function CommunityCard({ data }: CommunityCardProps) {
+function Card({
+  title,
+  tags,
+  text,
+  comments,
+  id,
+}: ICommunity) {
   return (
-    <>
-      {data.map((e) => 
-        <Card
-          key={e.id}
-          id={e.id}
-          title={e.title}
-          text={e.text}
-          tags={e.tags}
-          comments={e.comments}
-        />
-      )}
-    </>
+    <CommunityContainer>
+      <Contents>
+        <CommunityCardArticle title={title} article={text} tags={tags}/>
+        <CommunityCardComments comments={comments} />
+        <MoreSee id={id} />
+      </Contents>
+    </CommunityContainer>
   );
 }
 
-export default CommunityCard;
+export default Card;
