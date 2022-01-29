@@ -1,6 +1,15 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { marginCenter, maxWidth } from '@styles/mixin';
 import { MOBILE_BREAKPOINT } from '@/constants';
+
+const Slide = keyframes`
+    from{
+      left: -100%;
+    }
+    to{
+      left: 0%;
+    }
+`;
 
 // Swiper
 export const SwiperContainer = styled.div`
@@ -50,7 +59,7 @@ export const ArrowButtonsWrapper = styled.div`
   align-items: center;
 
   .devider {
-    width: 246px;
+    width: 280px;
     height: 1px;
     background-color: white;
   }
@@ -62,11 +71,13 @@ export const ArrowButtonsWrapper = styled.div`
     display: flex;
     width: 30px;
     justify-content: space-between;
+    cursor: pointer;
   }
 `;
 
 export const ImageContainer = styled.div`
   flex: 6;
+  position: relative;
   @media screen and (max-width: ${MOBILE_BREAKPOINT}px) {
     padding-left: 0rem;
     margin-top: 12px;
@@ -74,11 +85,34 @@ export const ImageContainer = styled.div`
   }
 `;
 
-export const Image = styled.div<{imgUrl: string}>`
+export const DotsContainer = styled.div`
+  position: absolute;
+  width: 100%;
+  bottom: -20px;
+  display: flex;
+  justify-content: center;
+`;
+
+export const Dot = styled.div<{selected: boolean}>`
+  width: 10px;
+  height: 10px;
+  transition: all 0.5s linear;
+  cursor: pointer;
+  background-color: ${props => props.selected 
+    ? props.theme.color.white 
+    : props.theme.color.gray_04
+  };
+  border-radius: 50%;
+  margin: 0 3px;
+`;
+
+export const Image = styled.div<{imgUrl: string, index: number}>`
+  position: absolute;
   border-radius: 10px;
   width: 100%;
   height: 100%;
   background-image: url(${props => props.imgUrl});
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 50% 10%;
 `;
