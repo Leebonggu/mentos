@@ -1,3 +1,3 @@
 export const SWIPER_IMAGE: string[] = [];
 
-export const MOBILE_BREAKPOINT = 640;
+export const MOBILE_BREAKPOINT = 768;
