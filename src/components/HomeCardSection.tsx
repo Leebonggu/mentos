@@ -7,9 +7,6 @@ const Container = styled.div<{display?: string}>`
   flex-direction: column;
   margin-bottom: 48px;
   display: ${props => props.display && props.display};
-  @media screen and (max-width: ${MOBILE_BREAKPOINT}px) {
-    padding: 0 24px;
-  }
 `;
 
 const Contents = styled.div`
