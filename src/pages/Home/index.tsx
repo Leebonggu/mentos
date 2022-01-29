@@ -49,7 +49,7 @@ const communityMock = [
     title: 'title',
     text:'world',
     author: 'nick',
-    tags: ["1", "2", "3"],
+    tags: ["1", "2"],
     comments: [{
       id: 1,
       author: 'man',
@@ -61,7 +61,7 @@ const communityMock = [
     title: 'title',
     text:'world',
     author: 'nick',
-    tags: ["1", "2", "3"],
+    tags: ["1", "2",],
     comments: [{
       id: 1,
       author: 'man',
@@ -73,7 +73,7 @@ const communityMock = [
     title: 'title',
     text:'world',
     author: 'nick',
-    tags: ["1", "2", "3"],
+    tags: ["1", "2",],
     comments: [{
       id: 1,
       author: 'man',
@@ -85,7 +85,7 @@ const communityMock = [
     title: 'title',
     text:'world',
     author: 'nick',
-    tags: ["1", "2", "3"],
+    tags: ["1", "2",],
     comments: [{
       id: 1,
       author: 'man',

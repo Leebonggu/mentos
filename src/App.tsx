@@ -9,7 +9,6 @@ import MobileFooter from './components/Footer/MobileFooter';
 function App() {
   const isDev = process.env.NODE_ENV === 'development';
   const isMobile = useMobileMode();
-  console.log(isMobile)
   
   return (
     <BrowserRouter basename={isDev ? '/' : process.env.PUBLIC_URL}>
