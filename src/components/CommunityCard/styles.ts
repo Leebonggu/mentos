@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 // index
 export const CommunityContainer = styled.div`
-  width: 224px;
   height: 320px;
   padding: 16px;
   border-radius: 10px;
@@ -29,7 +28,7 @@ export const CommentContainer = styled.div`
 `;
 
 export const CommentContents = styled.div`
-  width: 150px;
+  /* width: 150px; */
   margin-left: 8px;
   display: block;
   overflow: hidden;
@@ -60,7 +59,7 @@ export const MoreSeeContainer = styled(Link)`
   text-decoration: none;
   cursor: pointer;
   font-size: ${props => props.theme.typography.size.xxs};
-  color: ${props => props.theme.color.secondary_01};
+  color: ${props => props.theme.color.primary_01};
 `;
 
 

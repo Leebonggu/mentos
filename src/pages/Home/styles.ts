@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import { marginCenter, maxWidth } from '@styles/mixin'
 
 export const Container = styled.div`
   position: relative;
-  margin: 0 auto;
-  max-width: 960px;
+  ${maxWidth}; 
+  ${marginCenter};
   margin-top: 48px;
 `;

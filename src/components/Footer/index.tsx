@@ -1,4 +1,6 @@
-import Icon from '@components/atom/Icon';
+import { SocialFacebookIcon } from '@/assets/svg/SocialFacebookIcon';
+import { SocialGithubIcon } from '@/assets/svg/SocialGithubIcon';
+import { SocialTwitterIcon } from '@/assets/svg/SocialTwitterIcon';
 import Logo from '@components/atom/Logo';
 import {
   Container,
@@ -32,9 +34,9 @@ function Footer() {
           </CorporateInformationBottom>
         </CorporateInformationWrppaer>
         <SNSWrapper>
-          <Icon bgColor='gray_04'/>
-          <Icon bgColor='gray_04' ml={5} />
-          <Icon bgColor='gray_04' ml={5} />
+          <SocialFacebookIcon />
+          <SocialGithubIcon ml={5} />
+          <SocialTwitterIcon ml={5} />
         </SNSWrapper>
       </Contents>
     </Container>

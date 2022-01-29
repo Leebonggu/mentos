@@ -1,3 +1,4 @@
+import { marginCenter, maxWidth } from '@/styles/mixin';
 import styled from 'styled-components';
 
 export const Container = styled.footer`
@@ -11,8 +12,8 @@ export const Container = styled.footer`
 `;
 
 export const Contents = styled.div`
-  margin: 0 auto;
-  max-width: 960px;
+  ${marginCenter};
+  ${maxWidth}
   padding: 32px 0 36px 0;
   display: flex;
 `;
@@ -45,4 +46,32 @@ export const SNSWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   width: 100%;
+`;
+
+
+// Mobile
+export const MobildContents = styled.div`
+  padding: 21px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const MobileContentsTop = styled.div`
+  flex: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const SocialIconWrapper = styled.div`
+  display: flex;
+`;
+export const MobileContentsBottom = styled.div`
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* padding-top: 23px; */
+  font-size: ${props => props.theme.typography.size.xs};
 `;
