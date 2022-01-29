@@ -1,16 +1,6 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { marginCenter, maxWidth } from '@styles/mixin';
 import { MOBILE_BREAKPOINT } from '@/constants';
-
-const Slide = keyframes`
-    from{
-      left: -100%;
-    }
-    to{
-      left: 0%;
-    }
-`;
-
 // Swiper
 export const SwiperContainer = styled.div`
   height: 540px;
@@ -77,18 +67,20 @@ export const ArrowButtonsWrapper = styled.div`
 
 export const ImageContainer = styled.div`
   flex: 6;
+  display: flex;
   position: relative;
   @media screen and (max-width: ${MOBILE_BREAKPOINT}px) {
     padding-left: 0rem;
     margin-top: 12px;
     flex: 7;
   }
+  overflow: hidden;
 `;
 
 export const DotsContainer = styled.div`
   position: absolute;
   width: 100%;
-  bottom: -20px;
+  bottom: 10px;
   display: flex;
   justify-content: center;
 `;
@@ -107,12 +99,13 @@ export const Dot = styled.div<{selected: boolean}>`
 `;
 
 export const Image = styled.div<{imgUrl: string, index: number}>`
-  position: absolute;
-  border-radius: 10px;
-  width: 100%;
+  flex: 1 0 100%;
   height: 100%;
+  border-radius: 10px;
   background-image: url(${props => props.imgUrl});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 10%;
+  transform: translateX(-${({ index }) => index *100}%);
+  transition: all 0.5s;
 `;

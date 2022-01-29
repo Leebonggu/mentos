@@ -53,7 +53,12 @@ function Swiper() {
           </ArrowButtonsWrapper>
         </TypingContainer>
         <ImageContainer>
-          <Image imgUrl={SWIPER_IMAGE[currentImageIndex]} index={currentImageIndex}></Image>
+          {
+            SWIPER_IMAGE.map((img, index) => {
+              return <Image key={index} imgUrl={img} index={currentImageIndex}></Image>
+            })
+          }
+          
           <DotsContainer>
             {Array.from({ length: SWIPER_IMAGE.length }).map((_, index) => (
               <Dot
