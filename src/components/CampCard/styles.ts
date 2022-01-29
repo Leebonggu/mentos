@@ -4,11 +4,12 @@ interface ContainerProps {
   thumbnail?: string;
 }
 export const Container = styled.div<ContainerProps>`
-  width: 224px;
   height: 280px;
   border-radius: 10px;
   background-image: ${props => `url(${props.thumbnail})`};
+  background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   position: relative;
 `;
 
