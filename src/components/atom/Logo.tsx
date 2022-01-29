@@ -6,7 +6,7 @@ interface Props {
 const Logo = styled.span<Props>`
   font-size: ${props => props.theme.typography.size.md};
   font-weight: ${props => props.theme.typography.weight.bold};
-  color: ${props => props.isSticky ? props.theme.color.secondary_01 : props.theme.color.white};
+  color: ${props => props.isSticky ? props.theme.color.primary_01 : props.theme.color.white};
 `;
 
 // eslint-disable-next-line react/display-name

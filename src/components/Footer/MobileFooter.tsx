@@ -1,7 +1,7 @@
 import { SocialFacebookIcon } from '@/assets/svg/SocialFacebookIcon';
 import { SocialGithubIcon } from '@/assets/svg/SocialGithubIcon';
 import { SocialTwitterIcon } from '@/assets/svg/SocialTwitterIcon';
-import Logo from '../atom/Logo';
+import Logo from '@/components/atom/Logo';
 import {
   Container,
   MobildContents,
