@@ -4,7 +4,7 @@ function Swiper() {
   return (
     <SwiperContainer>
       <SwiperContents>
-        Swiper
+        Swiper and PR Template Test
       </SwiperContents>
     </SwiperContainer>
   )
