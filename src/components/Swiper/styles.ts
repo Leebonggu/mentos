@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { marginCenter, maxWidth } from '@styles/mixin';
 
 // Swiper
 export const SwiperContainer = styled.div`
@@ -9,6 +10,6 @@ export const SwiperContainer = styled.div`
 `;
 
 export const SwiperContents = styled.div`
-  max-width: 960px;
-  margin: 0 auto;
+  ${maxWidth};
+  ${marginCenter};
 `;

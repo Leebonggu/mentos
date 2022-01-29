@@ -10,6 +10,11 @@ const Container = styled.div`
 const Contents = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  @media screen and (max-width: 480px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const Title = styled.h2`

@@ -1,3 +1,4 @@
+import { maxWidth } from '@/styles/mixin';
 import styled from 'styled-components';
 
 export const Container = styled.footer`
@@ -12,7 +13,7 @@ export const Container = styled.footer`
 
 export const Contents = styled.div`
   margin: 0 auto;
-  max-width: 960px;
+  ${maxWidth}
   padding: 32px 0 36px 0;
   display: flex;
 `;

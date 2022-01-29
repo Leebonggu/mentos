@@ -1,4 +1,5 @@
 import styled, { css }from 'styled-components';
+import { marginCenter, maxWidth } from '@styles/mixin';
 
 export const Container = styled.header<ContentsWrapperProps>`
   height: 64px;
@@ -22,9 +23,9 @@ export const ContentsWrapper = styled.nav`
 `;
 
 export const Contents = styled.div`
-  max-width: 960px;
+  ${maxWidth};
+  ${marginCenter};
   height: 100%;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
