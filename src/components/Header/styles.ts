@@ -23,6 +23,7 @@ interface ContentsWrapperProps {
 }
 export const ContentsWrapper = styled.nav`
   height: 100%;
+  padding: 0 10px;
 `;
 
 export const Contents = styled.div`

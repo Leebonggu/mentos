@@ -59,7 +59,7 @@ export const MoreSeeContainer = styled(Link)`
   text-decoration: none;
   cursor: pointer;
   font-size: ${props => props.theme.typography.size.xxs};
-  color: ${props => props.theme.color.secondary_01};
+  color: ${props => props.theme.color.primary_01};
 `;
 
 
