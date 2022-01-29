@@ -1,7 +1,7 @@
 import { SVGProps } from 'react';
 import styled from 'styled-components';
 import { Color } from '@styles/colorTypes';
-import { conditionalColorGenerator } from '@libs/colorHelper'
+// import { conditionalColorGenerator } from '@libs/colorHelper'
 
  const Container = styled.div<IconProps>`
   width: 30px;

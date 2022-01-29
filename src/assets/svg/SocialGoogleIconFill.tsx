@@ -1,5 +1,4 @@
 import Icon from '@/components/atom/Icon';
-import React from 'react';
 
 function SocialGoogleIconFill() {
   return (
