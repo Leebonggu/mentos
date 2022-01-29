@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { marginCenter, maxWidth } from '@styles/mixin';
 import { MOBILE_BREAKPOINT } from '@/constants';
+
 // Swiper
 export const SwiperContainer = styled.div`
   height: 540px;
@@ -43,6 +44,7 @@ export const Title = styled.div`
     padding-bottom: 16px;
   }
 `;
+
 export const ArrowButtonsWrapper = styled.div`
   position: relative;
   display: flex;
