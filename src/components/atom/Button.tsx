@@ -1,0 +1,28 @@
+import styled from 'styled-components';
+
+const Container = styled.button<Props>`
+  width: 100%;
+  height: 48px;
+  background-color: ${props => props.theme.color.primary_01};
+  color: ${props => props.theme.color.white};
+  outline: none;
+  border: none;
+
+  &:disabled {
+    opacity: 0.2;
+  }
+`
+
+interface Props {
+  disabled: boolean;
+  children: React.ReactNode;
+  pl?: number;
+  pr?: number;
+  pt?: number;
+  pb?: number;
+}
+function Button({ disabled, children, ...props }: Props) {
+  return <Container disabled={disabled} {...props}>{children}</Container>
+}
+
+export default Button;

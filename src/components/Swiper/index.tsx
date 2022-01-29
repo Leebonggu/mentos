@@ -58,7 +58,6 @@ function Swiper() {
               return <Image key={index} imgUrl={img} index={currentImageIndex}></Image>
             })
           }
-          
           <DotsContainer>
             {Array.from({ length: SWIPER_IMAGE.length }).map((_, index) => (
               <Dot
