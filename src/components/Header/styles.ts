@@ -2,16 +2,18 @@ import styled, { css }from 'styled-components';
 import { marginCenter, maxWidth } from '@styles/mixin';
 
 export const Container = styled.header<ContentsWrapperProps>`
+  width: 100%;
   height: 64px;
+  position: fixed;
   z-index: 10;
-  background: ${props => props.theme.color.primary_03};
+  background: transparent;
   ${props => props.isSticky && css`
     color: ${props => props.theme.color.white};
     top: 0;
     position: sticky;
     background: ${props => props.theme.color.white};
     color: ${props => props.theme.color.black};
-    transition: all ease-in 0.1s;
+    transition: all ease-in-out 0.5s;
   `}
 `;
 

@@ -1,0 +1,1 @@
+export const SWIPER_IMAGE: string[] = [];

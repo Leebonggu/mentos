@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { SVGProps } from 'react';
 import styled from 'styled-components';
 import { Color } from '@styles/colorTypes';
 import { conditionalColorGenerator } from '@libs/colorHelper'
@@ -10,16 +10,21 @@ import { conditionalColorGenerator } from '@libs/colorHelper'
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background-color: ${props => conditionalColorGenerator(props.bgColor)};
+  background-color: ${props => props.bgColor};
   margin-right: ${props => props.mr}px;
   margin-left: ${props => props.ml}px;
   margin-top: ${props => props.mt}px;
   margin-bottom: ${props => props.mb}px;
 `;
 
+type TwitterColor = '#63B3ED';
+type GoogleColor = '#E53E3E';
+type InstagramColor = '#2D3748';
+type FacebookColor = '#3182CE';
+
 interface IconProps {
-  children?: ReactNode;
-  bgColor: keyof Color;
+  children?: SVGProps<SVGSVGElement>;
+  bgColor: keyof Color | TwitterColor | GoogleColor | InstagramColor | FacebookColor;
   mr?: number;
   ml?: number;
   mt?: number;
