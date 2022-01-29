@@ -11,8 +11,8 @@ export const SwiperContainer = styled.div`
   display: block;
   z-index: -1;
   @media screen and (max-width: ${MOBILE_BREAKPOINT}px) {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 `;
 

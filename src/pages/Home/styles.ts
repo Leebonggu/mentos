@@ -6,4 +6,5 @@ export const Container = styled.div`
   ${maxWidth}; 
   ${marginCenter};
   margin-top: 48px;
+  padding: 0 10px;
 `;
