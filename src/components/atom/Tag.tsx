@@ -23,7 +23,7 @@ interface TagStyledProps {
 }
 
 const Container = styled.div<TagStyledProps>`
-  width: 67px;
+  width: 100%;
   height: 22px;
   border-radius: 4px;
   margin-right: 8px;
