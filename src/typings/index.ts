@@ -2,14 +2,16 @@ import { Color } from '@/styles/colorTypes';
 import { SVGProps } from 'react';
 
 export type ClassStatus = '모집전' | '모집중' | '모집완료';
+export type CampType = 'popular' | 'sale';
 
 // TODO: 실제 프로젝트보고 수정할수도 있음
 export interface Camp {
   id: number;
-  type?: 'popular' | 'discount';
-  applyStatus: ClassStatus;
+  name: string;
+  type?: CampType;
+  status: ClassStatus;
+  field?: string;
   skill?: string;
-  campTitle: string;
   thumbnail?: string;
   startDate: string;
 }
