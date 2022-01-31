@@ -12,34 +12,34 @@ const campMock: Camp[] = [
     id: 1,
     type: 'popular',
     thumbnail: 'https://entertainimg.kbsmedia.co.kr/cms/uploads/PERSON_20211130132957_f5410dba3c83c9ca9d3a19b9bff9af18.jpg',
-    applyStatus: '모집전',
+    status: '모집전',
     skill: 'string',
     startDate: 'string',
-    campTitle: 'string',
+    name: 'string',
   },
   {
     id: 2,
     thumbnail: 'https://entertainimg.kbsmedia.co.kr/cms/uploads/PERSON_20211130132957_f5410dba3c83c9ca9d3a19b9bff9af18.jpg',
-    applyStatus: '모집완료',
+    status: '모집완료',
     skill: 'string',
     startDate: 'string',
-    campTitle: 'string',
+    name: 'string',
   },
   {
     id: 3,
     thumbnail: 'https://entertainimg.kbsmedia.co.kr/cms/uploads/PERSON_20211130132957_f5410dba3c83c9ca9d3a19b9bff9af18.jpg',
-    applyStatus: '모집완료',
+    status: '모집완료',
     skill: 'string',
     startDate: 'string',
-    campTitle: 'string',
+    name: 'string',
   },
   {
     id: 4,
     thumbnail: 'https://entertainimg.kbsmedia.co.kr/cms/uploads/PERSON_20211130132957_f5410dba3c83c9ca9d3a19b9bff9af18.jpg',
-    applyStatus: '모집중',
+    status: '모집중',
     skill: 'string',
     startDate: 'string',
-    campTitle: 'string',
+    name: 'string',
   },
 ];
 
@@ -96,6 +96,7 @@ const communityMock = [
 
 function Home() {
   const isMobile = useMobileMode();
+
   return (
     <>
       <Swiper />
@@ -105,10 +106,10 @@ function Home() {
             <PhotoCardContent
               key={camp.id}
               thumbnail={camp.thumbnail}
-              applyStatus={camp.applyStatus}
+              status={camp.status}
               skill={camp.skill}
               startDate={camp.startDate}
-              campTitle={camp.campTitle}
+              name={camp.name}
             />
           ))}
         </HomeCardSection>
@@ -117,10 +118,10 @@ function Home() {
             <PhotoCardContent
               key={camp.id}
               thumbnail={camp.thumbnail}
-              applyStatus={camp.applyStatus}
+              status={camp.status}
               skill={camp.skill}
               startDate={camp.startDate}
-              campTitle={camp.campTitle}
+              name={camp.name}
             />
           ))}
         </HomeCardSection>
