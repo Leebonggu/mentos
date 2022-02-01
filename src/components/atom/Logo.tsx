@@ -1,15 +1,21 @@
-import styled from 'styled-components';
+/* eslint-disable react/display-name */
+import styled, { css } from 'styled-components';
 
 interface Props {
   isSticky?: boolean;
+  isHome?: boolean;
 }
+
 const Logo = styled.span<Props>`
   font-size: ${props => props.theme.typography.size.md};
   font-weight: ${props => props.theme.typography.weight.bold};
-  color: ${props => props.isSticky ? props.theme.color.primary_01 : props.theme.color.white};
+  ${props => props.isHome ? css<Props>`
+    color: ${props => props.isSticky ? props.theme.color.primary_01 : props.theme.color.white};
+  ` : css`
+    color: ${props => props.theme.color.primary_01}
+  `}
 `;
 
-// eslint-disable-next-line react/display-name
-export default function({ isSticky }:Props) {
-  return <Logo isSticky={isSticky}>Mentos</Logo>
+export default function({ isSticky, isHome }:Props) {
+  return <Logo isSticky={isSticky} isHome={isHome}>Mentos</Logo>
 }
