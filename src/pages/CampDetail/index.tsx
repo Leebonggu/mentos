@@ -1,4 +1,5 @@
 import { Container } from './styles';
+import { generateRandomBackgroundColor } from '@/libs/generateRandomColor';
 
 function CampDetail() {
   return (

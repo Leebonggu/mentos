@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 import { generateCategoryByCampType } from '@/libs/generateCategoryByCampType';
 
 function PhotoCardContent(props: Camp) {
-  console.log(props)
   const { thumbnail, skill, startDate, name, id, type } = props;
-  console.log(skill)
   return (
     <Link to={`/detail/${id}`}>
       <Container thumbnail= {thumbnail}>
