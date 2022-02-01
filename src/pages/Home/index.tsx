@@ -5,7 +5,7 @@ import CommunityCard from '@components/CommunityCard';
 import HomeCardSection from '@components/HomeCardSection';
 import Banner from '@components/Banner';
 import { Camp } from '@/typings';
-import useMobileMode from '@/hooks/useMobileWidth';
+import { useMobileMode } from '@/hooks/useMobileWidth';
 
 const campMock: Camp[] = [
   {
