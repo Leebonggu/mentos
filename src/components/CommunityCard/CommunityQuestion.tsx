@@ -22,14 +22,14 @@ const Article = styled.div`
 interface CommunityCardArticleProps {
   tags: string[];
   title: string;
-  article: string;
+  content: string;
 }
-function CommunityCardArticle({ title, article, tags }: CommunityCardArticleProps) {
+function CommunityCardArticle({ title, content, tags }: CommunityCardArticleProps) {
   return (
     <Container>
       <Tags tags={tags} />
       <Title>{title}</Title>
-      <Article>{article}</Article>
+      <Article>{content}</Article>
     </Container>
   );
 }

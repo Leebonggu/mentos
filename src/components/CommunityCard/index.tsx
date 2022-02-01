@@ -7,14 +7,14 @@ import { ICommunity } from '@/typings';
 function Card({
   title,
   tags,
-  text,
+  content,
   comments,
   id,
 }: ICommunity) {
   return (
     <CommunityContainer>
       <Contents>
-        <CommunityCardArticle title={title} article={text} tags={tags}/>
+        <CommunityCardArticle title={title} content={content} tags={tags}/>
         <CommunityCardComments comments={comments} />
         <MoreSee id={id} />
       </Contents>

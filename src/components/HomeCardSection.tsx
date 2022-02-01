@@ -12,7 +12,6 @@ const Container = styled.div<{display?: string}>`
 const Contents = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  /* display: flex; */
   gap: 20px;
 
   @media screen and (max-width: ${MOBILE_BREAKPOINT}px) {
