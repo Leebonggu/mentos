@@ -1,5 +1,11 @@
+import { Container } from './styles';
+
 function CampDetail() {
-  return <div>CampDetail</div>;
+  return (
+    <Container>
+      Detail
+    </Container>
+  );
 }
 
 export default CampDetail;

@@ -105,6 +105,7 @@ function Home() {
           {campMock.map((camp) => (
             <PhotoCardContent
               key={camp.id}
+              id={camp.id}
               thumbnail={camp.thumbnail}
               status={camp.status}
               skill={camp.skill}
@@ -117,6 +118,7 @@ function Home() {
           {campMock.map((camp) => (
             <PhotoCardContent
               key={camp.id}
+              id={camp.id}
               thumbnail={camp.thumbnail}
               status={camp.status}
               skill={camp.skill}
