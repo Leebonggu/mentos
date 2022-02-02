@@ -55,9 +55,87 @@
 
 출처: [https://studiomeal.com/archives/197](https://studiomeal.com/archives/197)
 
+## Week4
+
+### Stroybook Settings
+
+- CRACO로 절대경로를 설정한 경우 Stroybook에서 그 경로를 인식하지 못함
+- .storybook/main.js에 설정을 추가해주자
+
+- 사실 절대경로를 사용하려면, tsconfig / webpack 둘다 설정해 주어야 한다
+- cra로 react 환경을 설치할 경우, webpack이 숨겨져 있기 떄문에 webpack 설정을 변경하기 위해서는 eject를 해줘여 한다
+- craco의 역할은 eject없이 webapck에 설정을 덮어씌어주는 역할이다.
+-  you should no longer need to add alias entries in your webpack.config.js which correspond to the paths entries in your tsconfig.json. This plugin creates those alias entries for you, so you don't have to!
+
+```js
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+
+module.exports = {
+  "stories": [
+    "../src/**/*.stories.mdx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)"
+  ],
+  "addons": [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/preset-create-react-app"
+  ],
+  "framework": "@storybook/react",
+  "core": {
+    "builder": "webpack5"
+  },
+  webpackFinal: async (config) => {
+    config.resolve.plugins.push(new TsconfigPathsPlugin({}));
+    return config;
+  },
+}
+```
+
+### styled-components global theme이 있을 경우
+
+
+```
+npm install -D storybook-addon-styled-component-theme
+```
+
+- 아래 코드를 추가해준다
+
+
+```js
+// main.js
+module.exports = {
+  "addons": [
+  ...
+    "storybook-addon-styled-component-theme/dist/preset"
+  ],
+}
+```
+```js
+// preview.js
+import { addDecorator } from '@storybook/react'
+import { withThemesProvider } from 'storybook-addon-styled-component-theme';
+import { ThemeProvider } from 'styled-components';
+import { theme } from '../src/styles/index';
+
+
+export const parameters = {
+  actions: { argTypesRegex: "^on[A-Z].*" },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
+    },
+  },
+}
+
+addDecorator(withThemesProvider([theme]), ThemeProvider);
+```
+
 ### 추가 하고싶은 것
 
-- [x] 절대경로 
+- [x] 절대경로
+  - CRACO로 절대경로 추가
 - [x] 파일 및 폴더구조 고민
-- [ ] react-query or swr
+- [x] react-query or swr
+  - swr 추가
 - [ ] 추가적으로 쓰고싶은 라이브러리 고민
