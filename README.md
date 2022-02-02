@@ -131,7 +131,40 @@ export const parameters = {
 addDecorator(withThemesProvider([theme]), ThemeProvider);
 ```
 
-### 추가 하고싶은 것
+### 컴포넌트 스토리 포멧(CSF)
+
+propery | 설명
+|-----|-------------|
+title | Storybook의 사이드바에 표시될 스토리 이름. /로 구분할 경우 그룹과 스토리 이름을 구분할 수 있다. 예를 들어, 위 예제의 title: 'Example/Button'은 Example 그룹의 Button 스토리로 표시된다.
+component | 컴포넌트
+args | 모든 스토리에 공통으로 전달될 props. 
+argTypes | 	각 Story args의 행동(behaviour) 방식 설정
+decorators | Story를 래핑하는 추가 렌더링 기능
+parameters | 	Story에 대한 정적 메타 데이터 정의
+excludeStories | 렌더링 제외 설정
+<!-- |component|args|argTypes| decorators |parameters|excludeStories -->
+
+- [https://storybook.js.org/docs/react/writing-stories/introduction](https://storybook.js.org/docs/react/writing-stories/introduction)
+- [https://poiemaweb.com/storybook](https://poiemaweb.com/storybook)
+
+```tsx
+// MyComponent.story.js|jsx|ts|tsx
+
+import { MyComponent } from './MyComponent';
+
+export default {
+  /* 👇 The title prop is optional.
+  * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
+  * to learn how to generate automatic titles
+  */
+  title: 'Path/To/MyComponent',
+  component: MyComponent,
+  decorators: [ ... ],
+  parameters: { ... }
+}
+```
+
+## 추가 하고싶은 것
 
 - [x] 절대경로
   - CRACO로 절대경로 추가

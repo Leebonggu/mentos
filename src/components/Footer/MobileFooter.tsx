@@ -1,6 +1,6 @@
-import { SocialFacebookIcon } from '@/assets/svg/SocialFacebookIcon';
-import { SocialGithubIcon } from '@/assets/svg/SocialGithubIcon';
-import { SocialTwitterIcon } from '@/assets/svg/SocialTwitterIcon';
+import { SocialFacebookIcon } from '@/icons/SocialFacebookIcon';
+import { SocialGithubIcon } from '@/icons/SocialGithubIcon';
+import { SocialTwitterIcon } from '@/icons/SocialTwitterIcon';
 import Logo from '@/components/atom/Logo';
 import {
   Container,

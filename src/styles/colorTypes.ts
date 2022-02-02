@@ -20,6 +20,20 @@ type Primary03 = 'linear-gradient(97.88deg, #854BFF -84.42%, #7179FF 15.02%, #6D
 type Secondary01 = '#24DBAF';
 type Secondary02 = '#CDF3EA';
 
+export type Colors = 
+| Black
+| White
+| Gray01
+| Gray02
+| Gray03
+| Gray04
+| Gray05
+| Gray06
+| Primary01
+| Primary02
+| Primary03
+| Secondary01
+| Secondary02
 export interface Basic {
   black: Black;
   white: White;
