@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { SWIPER_IMAGE } from '@/constants';
-import { ArrowRightIcon } from '@/assets/svg/ArrowRightIcon';
-import { ArrowLeftIcon } from '@/assets/svg/ArrowLeftIcon';
+import { ArrowRightIcon } from '@/icons/ArrowRightIcon';
+import { ArrowLeftIcon } from '@/icons/ArrowLeftIcon';
 import {
   SwiperContainer,
   SwiperContents,
