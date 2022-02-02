@@ -1,5 +1,6 @@
-import { Color } from '@/styles/colorTypes';
+import { Colors } from '@/styles/colorTypes';
 import React, { SVGProps } from 'react';
+
 
 export type ClassStatus = '모집전' | '모집중' | '모집완료';
 export type CampType = 'popular' | 'sale';
@@ -40,7 +41,7 @@ type FacebookColor = '#3182CE';
 
 export interface IconProps {
   children?: SVGProps<SVGSVGElement> | React.ReactNode;
-  bgColor?: keyof Color | TwitterColor | GoogleColor | InstagramColor | FacebookColor;
+  bgColor?: Colors | TwitterColor | GoogleColor | InstagramColor | FacebookColor;
   mr?: number;
   ml?: number;
   mt?: number;
