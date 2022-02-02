@@ -13,7 +13,7 @@ interface CommentProps {
 function Comment({ author, text }: CommentProps) {
   return (
     <CommentContainer>
-      <Icon bgColor='gray_05'/>
+      <Icon bgColor='#EEEEEE'/>
       <CommentContents>
         <AuthorName>{author}</AuthorName>
         <Text>{text}</Text>
