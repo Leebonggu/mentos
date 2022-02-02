@@ -2,25 +2,25 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Tag from '@components/atom/Tag'
 
 export default {
-  title: 'Mentos/Tag',
+  title: 'Atom/Tag',
   component: Tag,
 } as ComponentMeta<typeof Tag>;
 
-const Template: ComponentStory<typeof Tag> = (args) => <Tag {...args} />
-export const Main = Template.bind({});
+const TagTemplate: ComponentStory<typeof Tag> = (args) => <Tag {...args} />
+export const Main = TagTemplate.bind({});
 Main.args = {
   children: 'main',
   bgColor: 'primary',
   fontColor: 'white'
 }
-export const Sub = Template.bind({});
+export const Sub = TagTemplate.bind({});
 Sub.args = {
   children: 'Sub',
   bgColor: 'secondary',
   fontColor: 'white'
 }
 
-export const Default = Template.bind({});
+export const Default = TagTemplate.bind({});
 Default.args = {
   children: 'Default',
   bgColor: 'default',

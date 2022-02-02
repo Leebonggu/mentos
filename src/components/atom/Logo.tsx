@@ -1,7 +1,7 @@
 /* eslint-disable react/display-name */
 import styled, { css } from 'styled-components';
 
-interface Props {
+export interface Props {
   isSticky?: boolean;
   isHome?: boolean;
 }
