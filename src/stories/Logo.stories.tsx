@@ -10,4 +10,4 @@ export default {
   }
 } as ComponentMeta<typeof Logo>
 
-export const ConditionalLogo: ComponentStory<typeof Logo> = (args) => <Logo {...args} />
+export const Default: ComponentStory<typeof Logo> = (args) => <Logo {...args} />
