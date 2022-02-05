@@ -1,6 +1,9 @@
 import { BackgroundBar } from '@/pages/CampDetail/styles';
 import { maxWidth1140px } from '@/styles/mixin';
+import { ICampDetail } from '@/typings';
 import styled from 'styled-components';
+import SubmitBox from './SubmitBox';
+import TimeLimitBox from './TimeLimitBox';
 
 const Container = styled.div`
   width: 100;
@@ -43,59 +46,34 @@ const Aside = styled.div`
 const AbsoluteBox = styled.div`
   flex: 1;
   margin-top: 70px;
+  margin-right: 12px;
+  margin-left: 12px;
   position: fixed;
   display: flex;
   flex-direction: column;
-  height: 80%;
+  height: 75%;
   max-width: 353px;
-`;
-
-const SubmitBox = styled.div`
-  flex: 4;
-  background-color: wheat;
-  border-radius: 6px;
-  
-`;
-
-const TimeBox = styled.div`
-  margin-top: 20px;
-  flex: 1;
 `;
 
 interface Props {
   bgColor: string;
+  campDetail: ICampDetail;
 }
-function TopBanner({ bgColor }: Props) {
+function TopBanner({ bgColor, campDetail }: Props) {
+  const { headerImage } = campDetail;
   return (
     <Container>
       <BackgroundBar bgColor={bgColor} />  
       <Contents>
         <ImageContainer>
           <ImageWrapper>
-            <Image src="https://raw.githubusercontent.com/congchu/caffein-server/master/assets/images/camp_header.png"/>
+            <Image src={headerImage} />
           </ImageWrapper>
         </ImageContainer>
         <Aside>
           <AbsoluteBox>
-            <SubmitBox>
-              <div>
-              ddd
-              ddd
-              ddd
-              ddd
-              ddd
-              dddddddddddddddddddddddd
-              ddd
-              ddd
-              ddd
-              ddd
-              ddd
-              ddd
-              ddd
-              ddd
-              </div>
-            </SubmitBox>
-            <TimeBox>Time</TimeBox>
+            <SubmitBox {...campDetail} />
+            <TimeLimitBox />
           </AbsoluteBox>
         </Aside>
       </Contents>
