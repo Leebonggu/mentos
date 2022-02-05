@@ -21,7 +21,7 @@ function CampDetail() {
   return (
     <Container>
       <TopBanner bgColor={generateRandomBackgroundColor(id)} campDetail={data} />
-      <Desciption campDetail={data} />
+      <Desciption bgColor={generateRandomBackgroundColor(id)} campDetail={data} />
     </Container>
   );
 }
