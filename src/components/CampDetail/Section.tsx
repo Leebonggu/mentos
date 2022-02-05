@@ -54,7 +54,7 @@ interface Props {
 }
 function Section({ children, bgColor, title, ...props }: Props) {
   return (
-    <Container bgColor={bgColor} {...props}>
+    <Container bgColor={bgColor}>
       <Wrapper>
         <Contents  {...props}>
           {title && <Title dangerouslySetInnerHTML={{ __html: title }} />}
