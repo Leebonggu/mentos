@@ -12,6 +12,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      REACT_APP_BASE_URL: ${{secrets.REACT_APP_BASE_URL}}
     
     steps:
     - uses: actions/checkout@v2
