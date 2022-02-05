@@ -26,4 +26,8 @@ export const getCamp = async(url: string) => {
   console.log(url)
   return await axios.get(url)
     .then(response => response.data.data)
+    .catch(error => {
+      console.error(error);
+      // error 대응
+    })
 }
