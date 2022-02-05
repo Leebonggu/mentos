@@ -15,6 +15,29 @@ export interface Camp {
   startDate: string;
 }
 
+interface Faq {
+  answer: string;
+  question: string;
+}
+
+interface Review {
+  content: string;
+  reviewer: string;
+}
+export interface ICampDetail {
+  desc: string;
+  faqs: Faq[];
+  headerImage: string;
+  images: string[];
+  name: string;
+  process: string;
+  reviewMaterial: string[];
+  reviews: Review[];
+  seat: string;
+  startDate: string;
+  tags: string[];
+}
+
 // Community
 export interface IComment {
   id?: number;
