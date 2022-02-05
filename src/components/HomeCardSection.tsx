@@ -1,6 +1,7 @@
 import { MOBILE_BREAKPOINT } from '@/constants';
 import { ReactNode } from 'react';
 import styled from 'styled-components';
+import CardSectionSkeleton from './Skeleton/CardSectionSkeleton';
 
 const Container = styled.div<{display?: string}>`
   display: flex;
@@ -28,14 +29,21 @@ const Title = styled.h2`
 interface HomeCardSectionProps {
   children: ReactNode;
   title: string;
+  loading: boolean;
   display?: string; 
 }
 
-function HomeCardSection({ children, title, display }: HomeCardSectionProps) {
+function HomeCardSection({ children, title, display, loading }: HomeCardSectionProps) {
   return (
     <Container display={display}>
-      <Title>{title}</Title>
-      <Contents>{children}</Contents>
+      {loading ? (
+        <CardSectionSkeleton />
+      ) : (
+        <>
+          <Title>{title}</Title>
+          <Contents>{children}</Contents>
+        </>
+      )}
     </Container>
   );
 }

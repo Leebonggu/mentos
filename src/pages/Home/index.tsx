@@ -17,16 +17,16 @@ function Home() {
   const { data: saleCamps, error: saleCampError } = useSWR<Camp[]>(GET_CAMPS_URL_BY_TYPE('sale'), getCampByType)
   const { data: communities, error: communitiesError } = useSWR<ICommunity[]>(COMMUNITIES_URL, getCommunities)
   
-  fetchErrorRedirect404(popularCampError,saleCampError, communitiesError)
-  if (!popularCamps || !saleCamps || !communities) return <div>Loading...</div>;
+  fetchErrorRedirect404(popularCampError,saleCampError, communitiesError);
 
+  // if (!popularCamps || !saleCamps || !communities) return <div>Loading...</div>;
 
   return (
     <>
       <Swiper />
       <Container>
-        <HomeCardSection title='인기 부트 캠프'>
-          {popularCamps.map((camp) => (
+        <HomeCardSection title='인기 부트 캠프' loading={!popularCamps}>
+          {popularCamps?.map((camp) => (
             <PhotoCardContent
               key={`${camp.name}-${camp.id}`}
               id={camp.id}
@@ -39,8 +39,8 @@ function Home() {
             />
           ))}
         </HomeCardSection>
-        <HomeCardSection  title='특가 할인 캠프'>
-          {saleCamps.map((camp) => (
+        <HomeCardSection  title='특가 할인 캠프' loading={!saleCamps}>
+          {saleCamps?.map((camp) => (
             <PhotoCardContent
               key={`${camp.name}-${camp.id}`}
               id={camp.id}
@@ -54,7 +54,7 @@ function Home() {
           ))}
         </HomeCardSection>
         <Banner />
-        <HomeCardSection title='커뮤니티' display={isMobile ? 'none' : ''}>
+        <HomeCardSection title='커뮤니티' display={isMobile ? 'none' : ''}  loading={!communities}>
           {communities?.map((commnunity) => (
             <CommunityCard
               key={commnunity.id}
