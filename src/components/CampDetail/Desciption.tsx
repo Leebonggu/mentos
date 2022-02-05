@@ -5,7 +5,7 @@ import Summary from './Summary';
 import ImageContainer from './ImageContainer';
 import Section from './Section';
 import Review from './Review';
-
+import Faqs from './Faqs';
 
 const Container = styled.div`
   width: 100;
@@ -17,7 +17,6 @@ const ContentsWrapper = styled.div`
   flex-direction: column;
   margin: 0 auto;
 `;
-
 
 interface Props {
   campDetail: ICampDetail;
@@ -56,6 +55,12 @@ function Desciption({ campDetail, bgColor }: Props) {
         <Section title='주니어 개발자에게<br/>꼭 필요한 내용만 담았습니다.' mt={24} mb={24}>
           <ImageContainer src={campDetail.images[2]} alt='camp-image'  mt={24} mb={24} />
         </Section>
+        {/* section 6 */}
+        <PaddingY height={10}/>
+        <Section title="FAQ" mt={12} mb={12}>
+          <Faqs faqs={campDetail.faqs} />
+        </Section>
+        <PaddingY height={10}/>
       </ContentsWrapper>
       <PaddingY height={30}/>
     </Container>

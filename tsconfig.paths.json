@@ -13,7 +13,8 @@
       "@constants/*": ["src/constants/*"],
       "@modules/*": ["src/modules/*"],
       "@assets/*": ["src/assets/*"],
-      "@icons/*": ["src/icons/*"]
+      "@icons/*": ["src/icons/*"],
+      "@fn/": ["src/fn/*"]
     }
   }
 }
