@@ -43,6 +43,7 @@ const Detail = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-size: ${props => props.theme.typography.size.xs};
 
   .class-info {
     display: flex;
@@ -67,7 +68,6 @@ const tagsJoin = (tags: string[]) => {
 }
 
 function SubmitBox(props: ICampDetail) {
-  console.log(props);
   const {
     name, tags, process, reviewMaterial, startDate, seat
   } = props;
@@ -95,7 +95,7 @@ function SubmitBox(props: ICampDetail) {
               bgColor={theme.color.gray_04}
               fontColor={theme.color.gray_02}
               key={metairal}>{metairal}</Tag>
-          ))}
+           ))}
           </span>
         </div>
       </Detail>

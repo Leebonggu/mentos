@@ -5,11 +5,11 @@ import { getCamp, GET_CAMP_URL_BY_ID } from '@/apis/campAPI';
 import { Container } from './styles';
 import { ICampDetail } from '@/typings';
 import { generateRandomBackgroundColor } from '@/libs/generateRandomColor';
-import TopBanner from '@/components/CampDetail/TopBanner';
+import { TopBanner } from '@/components/CampDetail';
+import Desciption from '@/components/CampDetail/Desciption';
 
 function CampDetail() {
   const { id } = useParams();
-  console.log(GET_CAMP_URL_BY_ID(id))
   const { data, error } = useSWR<ICampDetail>(GET_CAMP_URL_BY_ID(id), getCamp, {
     dedupingInterval: 2000,
   });
@@ -20,10 +20,8 @@ function CampDetail() {
   
   return (
     <Container>
-      <TopBanner
-        bgColor={generateRandomBackgroundColor(id)}
-        campDetail={data}
-      />
+      <TopBanner bgColor={generateRandomBackgroundColor(id)} campDetail={data} />
+      <Desciption campDetail={data} />
     </Container>
   );
 }

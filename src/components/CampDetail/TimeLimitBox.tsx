@@ -38,7 +38,7 @@ function TimeLimitBox() {
   return (
     <Container>
       <Contents>
-        {Dday > 0 ? (
+        {Dday >= 0 ? (
           <>
             <Limit>{secondToDate(Dday)}</Limit>&nbsp;후 클래스가 마감돼요.
           </>

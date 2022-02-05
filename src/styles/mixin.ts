@@ -13,5 +13,5 @@ export const marginCenter = css`
 `;
 
 export const PaddingY = styled.div<{height: number}>`
-  padding: ${props => props.height} 0;
+  padding: ${props => props.height}px 0;
 `;

@@ -1,4 +1,4 @@
-import { BackgroundBar } from '@/pages/CampDetail/styles';
+import  BackgroundBar from './BackgroundColorBar'
 import { maxWidth1140px } from '@/styles/mixin';
 import { ICampDetail } from '@/typings';
 import styled from 'styled-components';
@@ -7,7 +7,7 @@ import TimeLimitBox from './TimeLimitBox';
 
 const Container = styled.div`
   width: 100;
-  height: 560px;
+  /* height: 560px; */
 `;
 
 const Contents = styled.div`
@@ -30,8 +30,9 @@ const ImageWrapper = styled.div`
   width: 100%;
   height: 100%;
 `;
+
 const Image = styled.img`
-border-radius: 6px;
+  border-radius: 6px;
   max-width: 100%
 `;
 
@@ -51,7 +52,7 @@ const AbsoluteBox = styled.div`
   position: fixed;
   display: flex;
   flex-direction: column;
-  height: 75%;
+  height: 70%;
   max-width: 353px;
 `;
 
