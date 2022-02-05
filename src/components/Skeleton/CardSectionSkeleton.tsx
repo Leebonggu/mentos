@@ -1,9 +1,14 @@
 import styled from "styled-components";
+
 import Skeleton from "@/components/Skeleton";
 
 const Container = styled.section`
   padding: 0px 16px;
   .section-title {
+    font-weight: ${props => props.theme.typography.weight.bold};
+    font-size: ${props => props.theme.typography.size.xxl};
+    line-height: ${props => props.theme.typography.lineHight.xxl};
+    letter-spacing: -0.01em;
     padding-bottom: 8px;
   }
   .camp-cards {
