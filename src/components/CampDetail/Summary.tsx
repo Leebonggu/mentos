@@ -1,8 +1,5 @@
 import { MOBILE_BREAKPOINT } from '@/constants';
-import font from '@/styles/font';
-import React from 'react';
 import styled from 'styled-components';
-
 
 const Container = styled.div`
   width: 100%;

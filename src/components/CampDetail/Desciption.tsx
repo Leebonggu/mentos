@@ -1,4 +1,4 @@
-import { maxWidth1140px, PaddingY } from '@/styles/mixin';
+import { PaddingY } from '@/styles/mixin';
 import styled from 'styled-components';
 import { ICampDetail } from '@/typings';
 import Summary from './Summary';
@@ -17,12 +17,6 @@ const ContentsWrapper = styled.div`
   margin: 0 auto;
 `;
 
-const Contents = styled.div`
-  padding: 0 12px;
-  flex: 0 0 66.6%;
-  max-width: 66.6%;
-  position: relative;
-`;
 
 interface Props {
   campDetail: ICampDetail;
