@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { ICampDetail } from '@/typings';
 import Summary from './Summary';
 import ImageContainer from './ImageContainer';
+import Section from './Section';
 
 
 const Container = styled.div`
@@ -11,7 +12,6 @@ const Container = styled.div`
 `;
 
 const ContentsWrapper = styled.div`
-  ${maxWidth1140px};
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -21,6 +21,7 @@ const Contents = styled.div`
   padding: 0 12px;
   flex: 0 0 66.6%;
   max-width: 66.6%;
+  position: relative;
 `;
 
 interface Props {
@@ -31,13 +32,17 @@ function Desciption({ campDetail }: Props) {
   return (
     <Container>
       <ContentsWrapper>
-        <Contents>
+        <PaddingY height={30}/>
+        <Section title='대답없는 VOD 강의에 라이브로 답하다.'>
           <Summary />
-          <PaddingY height={30}/>
           <ImageContainer src={campDetail.images[0]} alt='camp-image' />
-          <PaddingY height={30}/>
-        </Contents>
+        </Section>
+        <PaddingY height={30}/>
+        <Section title='트레이닝이 끝난 당신은 이렇게 됩니다.'>
+          <ImageContainer src={campDetail.images[1]} alt='camp-image' mt={24} mb={24}/>
+        </Section>
       </ContentsWrapper>
+      <PaddingY height={30}/>
     </Container>
   );
 }

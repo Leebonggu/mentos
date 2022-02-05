@@ -10,11 +10,6 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
-const Title = styled.h1`
-  ${font.H2}
-  font-weight: 900;
-  flex: 1;
-`;
 
 const Desc = styled.div`
   flex: 1;
@@ -68,7 +63,6 @@ const DetailBox = styled.div`
 function Summary() {
   return (
     <Container>
-      <Title>대답없는 VOD 강의에 라이브로 답하다.</Title>
       <Desc>
         React만큼은 실무에 제대로 활용할 수 있도록,
         <br/>
