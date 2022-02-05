@@ -12,7 +12,9 @@
       "@hooks/*": ["src/hooks/*"],
       "@constants/*": ["src/constants/*"],
       "@modules/*": ["src/modules/*"],
-      "@assets/*": ["src/assets/*"]
+      "@assets/*": ["src/assets/*"],
+      "@icons/*": ["src/icons/*"],
+      "@fn/": ["src/fn/*"]
     }
   }
 }

@@ -1,12 +1,8 @@
 import theme from '@styles/theme';
-import { Basic } from '@styles/colorTypes';
 import styled from 'styled-components';
 import { ReactNode } from 'react';
 
-type bgColor = 'default' | 'primary' | 'secondary';
-type fontColor = keyof Basic
-
-function handleTagBackgroundColor(color: bgColor) {
+function handleTagBackgroundColor(color: string) {
   switch (color) {
     case 'primary':
       return theme.color.primary_01; 
@@ -18,12 +14,12 @@ function handleTagBackgroundColor(color: bgColor) {
 }
 
 interface TagStyledProps {
-  bgColor: bgColor;
-  fontColor: fontColor;
+  bgColor: string;
+  fontColor: string;
 }
 
 const Container = styled.div<TagStyledProps>`
-  width: 67px;
+  width: 100%;
   height: 22px;
   border-radius: 4px;
   margin-right: 8px;
@@ -33,16 +29,17 @@ const Container = styled.div<TagStyledProps>`
   font-size: ${props => props.theme.typography.size.xxs};
   font-weight: ${props => props.theme.typography.weight.bold};
   display: flex;
+  justify-content: center;
   align-items: center;
 `;
 
-interface TagProps {
+export interface TagProps {
   children: ReactNode;
-  bgColor: bgColor;
-  fontColor: fontColor;
+  bgColor: string;
+  fontColor?: string;
 }
 
-function Tag({ children, bgColor, fontColor }: TagProps) {
+function Tag({ children, bgColor, fontColor='black' }: TagProps) {
   return <Container bgColor={bgColor} fontColor={fontColor}>{children}</Container>
 }
 

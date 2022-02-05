@@ -1,8 +1,8 @@
 import { MOBILE_BREAKPOINT } from '@/constants';
 import { useEffect, useState } from 'react';
 
-function useMobileMode() {
-  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < MOBILE_BREAKPOINT);
+export const useMobileMode = () => {
+  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= MOBILE_BREAKPOINT);
 
   const getScreenSizeIsMobile = () => {
     setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
@@ -15,5 +15,3 @@ function useMobileMode() {
 
   return isMobile;
 }
-
-export default useMobileMode;

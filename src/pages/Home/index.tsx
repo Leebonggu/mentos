@@ -1,137 +1,66 @@
+import useSWR from 'swr';
 import { Container } from './styles';
 import Swiper from '@components/Swiper'
 import PhotoCardContent from '@/components/CampCard'
 import CommunityCard from '@components/CommunityCard';
 import HomeCardSection from '@components/HomeCardSection';
 import Banner from '@components/Banner';
-import { Camp } from '@/typings';
-import useMobileMode from '@/hooks/useMobileWidth';
-
-const campMock: Camp[] = [
-  {
-    id: 1,
-    type: 'popular',
-    thumbnail: 'https://entertainimg.kbsmedia.co.kr/cms/uploads/PERSON_20211130132957_f5410dba3c83c9ca9d3a19b9bff9af18.jpg',
-    applyStatus: '모집전',
-    skill: 'string',
-    startDate: 'string',
-    campTitle: 'string',
-  },
-  {
-    id: 2,
-    thumbnail: 'https://entertainimg.kbsmedia.co.kr/cms/uploads/PERSON_20211130132957_f5410dba3c83c9ca9d3a19b9bff9af18.jpg',
-    applyStatus: '모집완료',
-    skill: 'string',
-    startDate: 'string',
-    campTitle: 'string',
-  },
-  {
-    id: 3,
-    thumbnail: 'https://entertainimg.kbsmedia.co.kr/cms/uploads/PERSON_20211130132957_f5410dba3c83c9ca9d3a19b9bff9af18.jpg',
-    applyStatus: '모집완료',
-    skill: 'string',
-    startDate: 'string',
-    campTitle: 'string',
-  },
-  {
-    id: 4,
-    thumbnail: 'https://entertainimg.kbsmedia.co.kr/cms/uploads/PERSON_20211130132957_f5410dba3c83c9ca9d3a19b9bff9af18.jpg',
-    applyStatus: '모집중',
-    skill: 'string',
-    startDate: 'string',
-    campTitle: 'string',
-  },
-];
-
-const communityMock = [
-  { 
-    id: 1,
-    title: 'title',
-    text:'world',
-    author: 'nick',
-    tags: ["1", "2"],
-    comments: [{
-      id: 1,
-      author: 'man',
-      text: 'commeno',
-    }]
-  },
-  { 
-    id: 2,
-    title: 'title',
-    text:'world',
-    author: 'nick',
-    tags: ["1", "2",],
-    comments: [{
-      id: 1,
-      author: 'man',
-      text: 'commeno',
-    }]
-  },
-  { 
-    id: 3,
-    title: 'title',
-    text:'world',
-    author: 'nick',
-    tags: ["1", "2",],
-    comments: [{
-      id: 1,
-      author: 'man',
-      text: 'commeno',
-    }]
-  },
-  { 
-    id: 4,
-    title: 'title',
-    text:'world',
-    author: 'nick',
-    tags: ["1", "2",],
-    comments: [{
-      id: 1,
-      author: 'man',
-      text: 'commeno',
-    }]
-  },
-]
+import { Camp, ICommunity } from '@/typings';
+import { useMobileMode } from '@/hooks/useMobileWidth';
+import { getCampByType, GET_CAMPS_URL_BY_TYPE } from '@/apis/campAPI';
+import { COMMUNITIES_URL, getCommunities } from '@/apis/communityAPI';
+import { fetchErrorRedirect404 } from '@/libs/catchErrorAndRedirect';
 
 function Home() {
   const isMobile = useMobileMode();
+  const { data: popularCamps, error: popularCampError } = useSWR<Camp[]>(GET_CAMPS_URL_BY_TYPE('popular'), getCampByType)
+  const { data: saleCamps, error: saleCampError } = useSWR<Camp[]>(GET_CAMPS_URL_BY_TYPE('sale'), getCampByType)
+  const { data: communities, error: communitiesError } = useSWR<ICommunity[]>(COMMUNITIES_URL, getCommunities)
+  
+  fetchErrorRedirect404(popularCampError,saleCampError, communitiesError);
+
+  // if (!popularCamps || !saleCamps || !communities) return <div>Loading...</div>;
+
   return (
     <>
       <Swiper />
       <Container>
-        <HomeCardSection title='인기 부트 캠프'>
-          {campMock.map((camp) => (
+        <HomeCardSection title='인기 부트 캠프' loading={!popularCamps}>
+          {popularCamps?.map((camp) => (
             <PhotoCardContent
-              key={camp.id}
+              key={`${camp.name}-${camp.id}`}
+              id={camp.id}
               thumbnail={camp.thumbnail}
-              applyStatus={camp.applyStatus}
+              status={camp.status}
               skill={camp.skill}
               startDate={camp.startDate}
-              campTitle={camp.campTitle}
+              name={camp.name}
+              type={camp.type}
             />
           ))}
         </HomeCardSection>
-        <HomeCardSection  title='특가 할인 캠프'>
-          {campMock.map((camp) => (
+        <HomeCardSection  title='특가 할인 캠프' loading={!saleCamps}>
+          {saleCamps?.map((camp) => (
             <PhotoCardContent
-              key={camp.id}
+              key={`${camp.name}-${camp.id}`}
+              id={camp.id}
               thumbnail={camp.thumbnail}
-              applyStatus={camp.applyStatus}
+              status={camp.status}
               skill={camp.skill}
               startDate={camp.startDate}
-              campTitle={camp.campTitle}
+              name={camp.name}
+              type={camp.type}
             />
           ))}
         </HomeCardSection>
         <Banner />
-        <HomeCardSection title='커뮤니티' display={isMobile ? 'none' : ''}>
-          {communityMock.map((commnunity) => (
+        <HomeCardSection title='커뮤니티' isMobile={isMobile ? 'none' : ''}  loading={!communities}>
+          {communities?.map((commnunity) => (
             <CommunityCard
               key={commnunity.id}
               id={commnunity.id}
               title={commnunity.title}
-              text={commnunity.text}
+              content={commnunity.content}
               tags={commnunity.tags}
               comments={commnunity.comments}
             />

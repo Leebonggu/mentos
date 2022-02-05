@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Container = styled.button<Props>`
   width: 100%;
@@ -7,12 +7,16 @@ const Container = styled.button<Props>`
   color: ${props => props.theme.color.white};
   outline: none;
   border: none;
+  border-radius: 6px;
+  ${props => props.pl && css`padding-left: ${props.pl}px;`};
+  ${props => props.pt && css`padding-top: ${props.pt}px;`};
+  ${props => props.pr && css`padding-right: ${props.pr}px;`};
+  ${props => props.pb && css`padding-bottom: ${props.pb}px;`};
 
   &:disabled {
     opacity: 0.2;
   }
 `
-
 interface Props {
   disabled: boolean;
   children: React.ReactNode;

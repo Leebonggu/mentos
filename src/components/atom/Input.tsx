@@ -34,6 +34,7 @@ const Container = styled.input<InputStyledProps>`
 interface Props {
   value: string;
   height: Size;
+  placeholder?: string;
   onChange: () => void;
 }
 function Input(props: Props) {
