@@ -45,7 +45,6 @@ interface Props {
   reviews: IReview[];
 }
 function Review({ reviews }: Props) {
-  console.log(reviews)
   return (
     <Container>
       <Contetns>

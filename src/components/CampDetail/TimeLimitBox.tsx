@@ -7,14 +7,14 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   margin-top: 20px;
-  height: 30px;
+  height: 36px;
   flex: 1;
   display: flex;
 `;
 
 const Contents = styled.div`
   width: 100%;
-  height: 48px;
+  height: 30px;
   justify-content: center;
   align-items: center;
   display: flex;

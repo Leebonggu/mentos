@@ -5,4 +5,4 @@ export const SWIPER_IMAGE: string[] = [
   'https://w.namu.la/s/8424086db0bf81ecfff9fc232134be51d4cd5016902b3eef0b3e3a6d733cf0bddd71f63a23a5c9ac37c1a63ff23c25b02bccb8bdf935f8ffd989f1ec433e40f81319703319ab38f27bf70f23ae2a2044c6f2ddabbee4a41f04a94d2fb629a86dfca309cb6eb0d4a2f90a03fe4d3fa761',
 ];
 
-export const MOBILE_BREAKPOINT = 680;
+export const MOBILE_BREAKPOINT = 679;

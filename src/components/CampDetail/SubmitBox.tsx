@@ -5,6 +5,7 @@ import font from '@/styles/font';
 import Tag from '../atom/Tag';
 import { theme } from '@/styles';
 import Button from '../atom/Button';
+import { MOBILE_BREAKPOINT } from '@/constants';
 
 const Container = styled.div`
   flex: 4;
@@ -24,17 +25,9 @@ const Container = styled.div`
     ${font.H2}
   }
   .detail {
-    flex :4;
+    flex :6;
     display: flex;
     flex-direction: column;
-  }
-  .button-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 32px;
-    font-weight: ${props => props.theme.typography.weight.bold};
   }
 `;
 
@@ -45,10 +38,14 @@ const Detail = styled.div`
   justify-content: space-between;
   font-size: ${props => props.theme.typography.size.xs};
 
+  @media screen and (max-width: ${MOBILE_BREAKPOINT}px) {
+  }
   .class-info {
     display: flex;
     justify-content: space-between;
-
+    @media screen and (max-width: ${MOBILE_BREAKPOINT}px) {
+      margin-bottom: 10px;
+    }
     & > .desc-title {
       flex: 4;
     }
@@ -60,8 +57,17 @@ const Detail = styled.div`
   }
 `;
 
-
-// type Props = Partial<ICampDetail>
+const ButtonContainer = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+  font-weight: ${props => props.theme.typography.weight.bold};
+  @media screen and (max-width: ${MOBILE_BREAKPOINT}px) {
+    display: none;
+  }
+`;
 
 const tagsJoin = (tags: string[]) => {
   return tags.join('∙')
@@ -99,9 +105,9 @@ function SubmitBox(props: ICampDetail) {
           </span>
         </div>
       </Detail>
-      <div className='button-container'>
+      <ButtonContainer>
         <Button disabled={false}>등록하기</Button>
-      </div>
+      </ButtonContainer>
     </Container>
   );
 }

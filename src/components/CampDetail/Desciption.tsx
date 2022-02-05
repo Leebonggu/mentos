@@ -23,7 +23,6 @@ interface Props {
   bgColor: string;
 }
 function Desciption({ campDetail, bgColor }: Props) {
-  console.log(campDetail)
   return (
     <Container>
       <ContentsWrapper>

@@ -4,6 +4,9 @@ import { ICampDetail } from '@/typings';
 import styled from 'styled-components';
 import SubmitBox from './SubmitBox';
 import TimeLimitBox from './TimeLimitBox';
+import { MOBILE_BREAKPOINT } from '@/constants';
+import { useMobileMode } from '@/hooks/useMobileWidth';
+import BottomSitckyButton from './BottomSitckyButton';
 
 const Container = styled.div`
   width: 100;
@@ -14,6 +17,9 @@ const Contents = styled.div`
   ${maxWidth1140px};
   display: flex;
   margin: 0 auto;
+  @media screen and (max-width: ${MOBILE_BREAKPOINT}px) {
+    flex-direction: column;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -23,12 +29,21 @@ const ImageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  @media screen and (max-width: ${MOBILE_BREAKPOINT}px) {
+    /* flex: 1; */
+    padding: 0px;
+    width: 100%;
+    max-width: 100%;
+  }
 `;
 
 const ImageWrapper = styled.div`
   margin-top: 70px;
   width: 100%;
   height: 100%;
+  @media screen and (max-width: ${MOBILE_BREAKPOINT}px) {
+    margin-top: 0;
+  }
 `;
 
 const Image = styled.img`
@@ -42,6 +57,11 @@ const Aside = styled.div`
   max-width: 33.3%;
   position: relative;
   display: flex;
+  @media screen and (max-width: ${MOBILE_BREAKPOINT}px) {
+    flex: 0;
+    max-width: 0%;
+    display: none;
+  }
 `;
 
 const AbsoluteBox = styled.div`
@@ -59,25 +79,41 @@ const AbsoluteBox = styled.div`
 interface Props {
   bgColor: string;
   campDetail: ICampDetail;
+  isMobile?: boolean;
 }
-function TopBanner({ bgColor, campDetail }: Props) {
-  const { headerImage } = campDetail;
-  return (
-    <Container>
-      <BackgroundBar bgColor={bgColor} />  
-      <Contents>
-        <ImageContainer>
-          <ImageWrapper>
-            <Image src={headerImage} />
-          </ImageWrapper>
-        </ImageContainer>
+// TODO: 개선 필요
+const NonMobile = ({ bgColor, campDetail, isMobile }: Props) => (
+  <>
+    {!isMobile && <BackgroundBar bgColor={bgColor} />}
+    <Contents>
+      <ImageContainer>
+        <ImageWrapper>
+          <Image src={campDetail.headerImage} />
+        </ImageWrapper>
+      </ImageContainer>
+      {isMobile && (
+        <>
+          <SubmitBox {...campDetail}/>
+          <BottomSitckyButton />
+        </>
+      )}
+      {!isMobile && 
         <Aside>
           <AbsoluteBox>
             <SubmitBox {...campDetail} />
             <TimeLimitBox />
           </AbsoluteBox>
         </Aside>
-      </Contents>
+      }
+    </Contents>
+  </>
+)
+
+function TopBanner({ bgColor, campDetail }: Props) {
+  const isMobile = useMobileMode();
+  return (
+    <Container>
+      <NonMobile campDetail={campDetail} bgColor={bgColor} isMobile={isMobile} />
     </Container>
   );
 }
