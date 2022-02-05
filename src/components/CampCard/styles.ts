@@ -36,7 +36,7 @@ export const PhotoCardBox = styled.div`
   }
   .title {
     font-weight: ${props => props.theme.typography.weight.bold};
-    font-size: ${props => props.theme.typography.size.sm};
+    font-size: ${props => props.theme.typography.size.md};
     line-height: 1.2;
     color: ${props => props.theme.color.white};
   }

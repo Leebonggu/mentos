@@ -54,7 +54,7 @@ function Home() {
           ))}
         </HomeCardSection>
         <Banner />
-        <HomeCardSection title='커뮤니티' display={isMobile ? 'none' : ''}  loading={!communities}>
+        <HomeCardSection title='커뮤니티' isMobile={isMobile ? 'none' : ''}  loading={!communities}>
           {communities?.map((commnunity) => (
             <CommunityCard
               key={commnunity.id}

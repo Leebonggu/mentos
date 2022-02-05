@@ -3,17 +3,17 @@ import { ReactNode } from 'react';
 import styled from 'styled-components';
 import CardSectionSkeleton from './Skeleton/CardSectionSkeleton';
 
-const Container = styled.div<{display?: string}>`
-  display: flex;
+const Container = styled.div<{isMobile?: string}>`
   flex-direction: column;
   margin-bottom: 48px;
-  display: ${props => props.display && props.display};
+  display: ${props => props.isMobile ? 'none' : 'flex'};
 `;
 
 const Contents = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 10px;
+  overflow-x: scroll;
 
   @media screen and (max-width: ${MOBILE_BREAKPOINT}px) {
     grid-template-columns: repeat(1, 1fr);
@@ -30,12 +30,12 @@ interface HomeCardSectionProps {
   children: ReactNode;
   title: string;
   loading: boolean;
-  display?: string; 
+  isMobile?: string; 
 }
 
-function HomeCardSection({ children, title, display, loading }: HomeCardSectionProps) {
+function HomeCardSection({ children, title, isMobile, loading }: HomeCardSectionProps) {
   return (
-    <Container display={display}>
+    <Container isMobile={isMobile}>
       {loading ? (
         <CardSectionSkeleton />
       ) : (

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 // index
 export const CommunityContainer = styled.div`
+  width: 100%;
   height: 320px;
   padding: 16px;
   border-radius: 10px;
@@ -41,7 +42,7 @@ export const AuthorName = styled.div`
 `;
 
 export const Text = styled.div`
-  width: 135px;
+  /* width: 135px; */
   white-space: nowrap;
   overflow:hidden;
   text-overflow:ellipsis;

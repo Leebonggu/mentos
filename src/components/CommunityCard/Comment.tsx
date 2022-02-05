@@ -1,3 +1,4 @@
+import { generateEllipsis } from '@/libs/textEllipsisHelper';
 import Icon from '@components/atom/Icon';
 import {
   CommentContainer,
@@ -19,7 +20,7 @@ function Comment({ author, text, profile }: CommentProps) {
       </Icon>
       <CommentContents>
         <AuthorName>{author}</AuthorName>
-        <Text>{text}</Text>
+        <Text>{generateEllipsis(text, 12)}</Text>
       </CommentContents>
     </CommentContainer>
   );
