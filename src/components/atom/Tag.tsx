@@ -36,10 +36,10 @@ const Container = styled.div<TagStyledProps>`
 export interface TagProps {
   children: ReactNode;
   bgColor: string;
-  fontColor: string;
+  fontColor?: string;
 }
 
-function Tag({ children, bgColor, fontColor }: TagProps) {
+function Tag({ children, bgColor, fontColor='black' }: TagProps) {
   return <Container bgColor={bgColor} fontColor={fontColor}>{children}</Container>
 }
 

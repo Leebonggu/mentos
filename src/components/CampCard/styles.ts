@@ -37,10 +37,11 @@ export const PhotoCardBox = styled.div`
   .title {
     font-weight: ${props => props.theme.typography.weight.bold};
     font-size: ${props => props.theme.typography.size.md};
+    line-height: 1.2;
     color: ${props => props.theme.color.white};
   }
   .due-date {
-    font-weight: ${props => props.theme.typography.weight.bold};
+    font-weight: ${props => props.theme.typography.weight.medium};
     font-size: ${props => props.theme.typography.size.xs};
     color: ${props => props.theme.color.white};
   }

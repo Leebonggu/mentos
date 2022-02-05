@@ -9,12 +9,11 @@ import axios from 'axios';
 
 function App() {
   axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
-  console.log(axios.defaults.baseURL)
   const isDev = process.env.NODE_ENV === 'development';
   const isMobile = useMobileMode();
   
   return (
-    <BrowserRouter basename={isDev ? '/dev' : process.env.PUBLIC_URL}>
+    <BrowserRouter basename={isDev ? '/' : process.env.PUBLIC_URL}>
       <Header />
       <Layout>
         <RootRoutes />

@@ -15,7 +15,9 @@ interface CommunityCardCommentsProps {
 function CommunityCardComments({ comments }: CommunityCardCommentsProps) {
   return (
     <Container>
-      {comments.map((comment) => <Comment key={comment.id} author={comment.author} text={comment.text} />)}
+      {comments.map((comment, index) => (
+        <Comment key={index} author={comment.nickname} text={comment.content} profile={comment.profile} />
+      ))}
     </Container>
   );
 }

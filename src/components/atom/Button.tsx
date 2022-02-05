@@ -7,6 +7,7 @@ const Container = styled.button<Props>`
   color: ${props => props.theme.color.white};
   outline: none;
   border: none;
+  border-radius: 6px;
   ${props => props.pl && css`padding-left: ${props.pl}px;`};
   ${props => props.pt && css`padding-top: ${props.pt}px;`};
   ${props => props.pr && css`padding-right: ${props.pr}px;`};
