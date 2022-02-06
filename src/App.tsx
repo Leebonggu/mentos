@@ -13,7 +13,7 @@ function App() {
   const isMobile = useMobileMode();
   
   return (
-    <BrowserRouter basename={isDev ? '/' : process.env.PUBLIC_URL}>
+    <BrowserRouter>
       <Header />
       <Layout>
         <RootRoutes />
