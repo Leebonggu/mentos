@@ -15,9 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Build app
-      env:
-        REACT_APP_BASE_URL: ${ {secrets.REACT_APP_BASE_URL }}
-
     - name: Deploy react app to github pages
       uses: tanwanimohit/deploy-react-to-ghpages@v1.0.1
+      env:
+        REACT_APP_BASE_URL: ${ {secrets.REACT_APP_BASE_URL }}
