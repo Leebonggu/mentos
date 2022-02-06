@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/mentos/static/js/main.66ea762e.js",
+    "index.html": "/mentos/index.html",
+    "main.66ea762e.js.map": "/mentos/static/js/main.66ea762e.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.66ea762e.js"
+  ]
+}
