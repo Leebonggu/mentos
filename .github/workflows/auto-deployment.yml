@@ -10,17 +10,15 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     
-    env:
     steps:
     - uses: actions/checkout@v2
 
     - name: Build app
       run: npm run build
       env:
-        REACT_APP_BASE_URL: ${{secrets.REACT_APP_BASE_URL}}
+        REACT_APP_BASE_URL: ${ {secrets.REACT_APP_BASE_URL }}
 
     - name: Deploy react app to github pages
       uses: tanwanimohit/deploy-react-to-ghpages@v1.0.1
