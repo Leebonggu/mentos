@@ -7,12 +7,15 @@ import { ICampDetail } from '@/typings';
 import { generateRandomBackgroundColor } from '@/libs/generateRandomColor';
 import { TopBanner } from '@/components/CampDetail';
 import Desciption from '@/components/CampDetail/Desciption';
+import { useScrollTop } from '@/hooks/useScrollTop';
 
 function CampDetail() {
   const { id } = useParams();
   const { data, error } = useSWR<ICampDetail>(GET_CAMP_URL_BY_ID(id), getCamp, {
     dedupingInterval: 2000,
   });
+  
+  useScrollTop();
 
   fetchErrorRedirect404(error);
   

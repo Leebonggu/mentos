@@ -8,7 +8,7 @@ import MobileFooter from '@components/Footer/MobileFooter'
 
 function App() {
   const isMobile = useMobileMode();
-  
+
   return (
     <BrowserRouter>
       <Header />
