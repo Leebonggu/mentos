@@ -1,0 +1,31 @@
+name: React app deployement
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout v2
+        uses: actions/checkout@v2
+      - name: Install Dependence
+        run: npm install
+
+      - name: Build app
+        run: npm run  build
+        env:
+          REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}
+
+      - name: Deploy To s3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          
+        run: |
+          aws s3 cp \
+            --recursive \
+            --region ap-northeast-2 \
+            build s3://prod.mentos.com
