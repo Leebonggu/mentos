@@ -12,11 +12,11 @@ function App() {
   return (
     <main>
       <BrowserRouter>
-      <Header />
-        <Layout>
-          <RootRoutes />
-        </Layout>
-      {isMobile ? <MobileFooter /> : <Footer />}
+        <Header />
+          <Layout>
+            <RootRoutes />
+          </Layout>
+        {isMobile ? <MobileFooter /> : <Footer />}
       </BrowserRouter>
     </main>
   );
