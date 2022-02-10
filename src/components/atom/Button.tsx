@@ -24,7 +24,7 @@ const Container = styled.button<Props>`
   }
 `
 interface Props {
-  disabled: boolean;
+  disabled?: boolean;
   children: React.ReactNode;
   pl?: number;
   pr?: number;

@@ -66,6 +66,8 @@ type FacebookColor = '#3182CE';
 export interface IconProps {
   children?: SVGProps<SVGSVGElement> | React.ReactNode;
   bgColor?: Colors | TwitterColor | GoogleColor | InstagramColor | FacebookColor;
+  width?: number;
+  height?: number;
   mr?: number;
   ml?: number;
   mt?: number;

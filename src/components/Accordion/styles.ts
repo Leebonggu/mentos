@@ -25,6 +25,7 @@ export const AccodianTitle = styled.h2`
   font-style: normal;
   line-height: 1.22;
   letter-spacing: -0.15px;
+  font-weight: ${props => props.theme.typography.weight.bold};
 `;
 
 export const AccodianContents = styled.div<{selected: boolean}>`
