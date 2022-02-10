@@ -25,6 +25,7 @@ interface Review {
   reviewer: string;
 }
 export interface ICampDetail {
+  id?: string; 
   desc: string;
   faqs: Faq[];
   headerImage: string;

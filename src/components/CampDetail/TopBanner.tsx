@@ -77,12 +77,13 @@ const AbsoluteBox = styled.div`
 `;
 
 interface Props {
+  campId?: string;
   bgColor: string;
   campDetail: ICampDetail;
   isMobile?: boolean;
 }
 // TODO: 개선 필요
-const NonMobile = ({ bgColor, campDetail, isMobile }: Props) => (
+const Comp = ({ bgColor, campDetail, isMobile, campId }: Props) => (
   <>
     {!isMobile && <BackgroundBar bgColor={bgColor} />}
     <Contents>
@@ -94,13 +95,13 @@ const NonMobile = ({ bgColor, campDetail, isMobile }: Props) => (
       {isMobile && (
         <>
           <SubmitBox {...campDetail}/>
-          <BottomSitckyButton />
+          <BottomSitckyButton campId={campId}/>
         </>
       )}
       {!isMobile && 
         <Aside>
           <AbsoluteBox>
-            <SubmitBox {...campDetail} />
+            <SubmitBox {...campDetail} id={campId}/>
             <TimeLimitBox />
           </AbsoluteBox>
         </Aside>
@@ -109,11 +110,12 @@ const NonMobile = ({ bgColor, campDetail, isMobile }: Props) => (
   </>
 )
 
-function TopBanner({ bgColor, campDetail }: Props) {
+function TopBanner({ bgColor, campDetail, campId }: Props) {
+  console.log(campDetail)
   const isMobile = useMobileMode();
   return (
     <Container>
-      <NonMobile campDetail={campDetail} bgColor={bgColor} isMobile={isMobile} />
+      <Comp campDetail={campDetail} bgColor={bgColor} isMobile={isMobile} campId={campId} />
     </Container>
   );
 }

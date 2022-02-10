@@ -21,6 +21,7 @@ const ContentsWrapper = styled.div`
 interface Props {
   campDetail: ICampDetail;
   bgColor: string;
+  campId?: string;
 }
 function Desciption({ campDetail, bgColor }: Props) {
   return (

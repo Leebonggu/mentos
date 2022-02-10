@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from '../atom/Button';
 import TimeLimitBox from './TimeLimitBox';
@@ -21,13 +22,19 @@ const Contents = styled.div`
   /* justify-content: space-between; */
 
 `;
-
-function BottomSitckyButton() {
+interface Props {
+  campId?: string; 
+}
+function BottomSitckyButton({ campId }: Props) {
   return (
     <Container>
       <Contents>
         <TimeLimitBox />
-        <Button disabled={false}>등록하기</Button>
+          <Link to={`/apply/${campId}`}>
+            <Button disabled={false} weight='bold'>
+                등록하기
+            </Button>
+          </Link>
       </Contents>
     </Container>
   );
