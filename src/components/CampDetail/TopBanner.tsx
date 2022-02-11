@@ -111,7 +111,6 @@ const Comp = ({ bgColor, campDetail, isMobile, campId }: Props) => (
 )
 
 function TopBanner({ bgColor, campDetail, campId }: Props) {
-  console.log(campDetail)
   const isMobile = useMobileMode();
   return (
     <Container>
