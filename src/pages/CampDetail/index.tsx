@@ -23,8 +23,8 @@ function CampDetail() {
   
   return (
     <Container>
-      <TopBanner bgColor={generateRandomBackgroundColor(id)} campDetail={data} />
-      <Desciption bgColor={generateRandomBackgroundColor(id)} campDetail={data} />
+      <TopBanner bgColor={generateRandomBackgroundColor(id)} campDetail={data} campId={id} />
+      <Desciption bgColor={generateRandomBackgroundColor(id)} campDetail={data} campId={id} />
     </Container>
   );
 }

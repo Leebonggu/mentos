@@ -4,9 +4,6 @@ import styled from 'styled-components';
 export const Container = styled.footer`
   width: 100%;
   height: 160px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
   margin-bottom: 0px;
   background-color: ${props => props.theme.color.gray_05};
 `;

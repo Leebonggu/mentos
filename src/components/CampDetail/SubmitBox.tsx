@@ -6,6 +6,7 @@ import Tag from '../atom/Tag';
 import { theme } from '@/styles';
 import Button from '../atom/Button';
 import { MOBILE_BREAKPOINT } from '@/constants';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   flex: 4;
@@ -75,7 +76,7 @@ const tagsJoin = (tags: string[]) => {
 
 function SubmitBox(props: ICampDetail) {
   const {
-    name, tags, process, reviewMaterial, startDate, seat
+    name, tags, process, reviewMaterial, startDate, seat, id
   } = props;
   return (
     <Container>
@@ -105,9 +106,13 @@ function SubmitBox(props: ICampDetail) {
           </span>
         </div>
       </Detail>
-      <ButtonContainer>
-        <Button disabled={false}>등록하기</Button>
-      </ButtonContainer>
+        <Link to={`/apply/${id}`}>
+          <ButtonContainer>
+            <Button disabled={false}>
+                등록하기
+            </Button>
+          </ButtonContainer>
+        </Link>
     </Container>
   );
 }
