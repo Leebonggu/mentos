@@ -21,6 +21,7 @@ const Container = styled.input<InputStyledProps>`
   width: 100%;  
   height: ${props => getInputHeight(props.height)};
   border: 1px solid #CBD5E0;
+  padding: 0 1rem;
   border-radius: 4px;
   box-sizing: border-box;
   background: #FFFFFF;
