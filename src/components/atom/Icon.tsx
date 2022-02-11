@@ -3,8 +3,8 @@ import { IconProps } from '@/typings';
 // import { conditionalColorGenerator } from '@libs/colorHelper'
 
  const Container = styled.div<IconProps>`
-  width: 30px;
-  height: 30px;
+  width: ${props => props.width || 30}px;
+  height: ${props => props.height || 30}px;
   display: flex;
   justify-content: center;
   align-items: center;

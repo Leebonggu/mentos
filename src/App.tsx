@@ -8,15 +8,17 @@ import MobileFooter from '@components/Footer/MobileFooter'
 
 function App() {
   const isMobile = useMobileMode();
-  
+
   return (
-    <BrowserRouter>
-      <Header />
-      <Layout>
-        <RootRoutes />
-      </Layout>
-      {isMobile ? <MobileFooter /> : <Footer />}
-    </BrowserRouter>
+    <main>
+      <BrowserRouter>
+        <Header />
+          <Layout>
+            <RootRoutes />
+          </Layout>
+        {isMobile ? <MobileFooter /> : <Footer />}
+      </BrowserRouter>
+    </main>
   );
 }
 

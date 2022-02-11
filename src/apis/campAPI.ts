@@ -23,7 +23,6 @@ export const getCampByType = async(url: string) => {
 
 export const GET_CAMP_URL_BY_ID = (id?: string ) => `/camps/${id}`;
 export const getCamp = async(url: string) => {
-  console.log(url)
   return await serverAPI.get(url)
     .then(response => response.data.data)
     .catch(error => {
