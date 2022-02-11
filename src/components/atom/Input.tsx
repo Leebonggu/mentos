@@ -24,7 +24,7 @@ const Container = styled.input<InputStyledProps>`
   border-radius: 4px;
   box-sizing: border-box;
   background: #FFFFFF;
-  color: #CBD5E0;
+  color: black;
 
   &::placeholder {
     color: #CBD5E0;

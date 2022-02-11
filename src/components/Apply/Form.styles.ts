@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.form`
-  width: 100%;
   max-width: 722px;
   display: flex;
   flex-direction: column;
   background-color: ${props => props.theme.color.white};
   padding: 36px;
+  margin: 2rem;
 `;
 
 export const Title = styled.h2`

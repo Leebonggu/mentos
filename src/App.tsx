@@ -10,15 +10,13 @@ function App() {
   const isMobile = useMobileMode();
 
   return (
-    <main>
-      <BrowserRouter>
-        <Header />
-          <Layout>
-            <RootRoutes />
-          </Layout>
-        {isMobile ? <MobileFooter /> : <Footer />}
-      </BrowserRouter>
-    </main>
+    <BrowserRouter>
+      <Header />
+        <Layout>
+          <RootRoutes />
+        </Layout>
+      {isMobile ? <MobileFooter /> : <Footer />}
+    </BrowserRouter>
   );
 }
 

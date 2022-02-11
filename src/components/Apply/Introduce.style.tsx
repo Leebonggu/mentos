@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-export const Container = styled.form`
-  width: 100%;
+export const Container = styled.div`
   max-width: 722px;
   display: flex;
   justify-content: space-between;
-  margin: 2rem 0;
+  margin: 2rem;
+  /* padding: 36px; */
 `;
 
 export const Description = styled.div`
@@ -15,15 +15,15 @@ export const Description = styled.div`
   border-radius: 12px;
   background-color: ${props => props.theme.color.white};
   position: relative;
-
   line-height: 24px;
+
   h3 {
     font-weight: ${props => props.theme.typography.weight.bold};
   }
 
   .triangle {
     position: absolute;
-    right: -24px;
+    right: -1rem;
     top: 60px;
     width: 0;
     height: 0;
